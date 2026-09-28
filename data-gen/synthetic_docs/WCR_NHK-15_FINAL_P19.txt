@@ -1,0 +1,35 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: NHK-15                       WELL NAME: Well Nahorkatiya #15
+FIELD: Nahorkatiya                           BLOCK: BLOCK-ASSAM-OIL-02
+RIG: OIL-RIG-03                               SPUD DATE: 2022-08-12
+KB ELEVATION: 112.11 m               TARGET DEPTH (TD): 4195 m MD / 3970.71 m TVD
+SURFACE COORD: LAT 27.284249 N, LON 95.267201 E
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 19):
+DEPTH INTERVAL: 3593.69 m to 3622.46 m
+FORMATION: Barail Coal-Shale
+INCIDENT CLASSIFICATION: KICK
+SEVERITY: CRITICAL
+START TIME: 2021-09-06 00:00:00 | NPT RECORDED: 15.9 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.
+
+FINAL OUTCOME & LESSONS LEARNED:
+Well killed safely after 16 hours. Resumed drilling with zero gas units.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.38 sg
+- Volume Lost / Gained: 0 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

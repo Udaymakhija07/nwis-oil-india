@@ -1,0 +1,43 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: MOR-03                       WELL NAME: Well Moran #03
+FIELD: Moran                           BLOCK: BLOCK-ASSAM-OIL-03
+RIG: OIL-RIG-10                               SPUD DATE: 2020-09-07
+KB ELEVATION: 124.7 m               TARGET DEPTH (TD): 3850 m MD / 3606.05 m TVD
+SURFACE COORD: LAT 27.186973 N, LON 94.962622 E
+--------------------------------------------------------------------------------
+GEOLOGICAL FORMATION TOPS:
+- Alluvium: 0.0 m
+- Dhekiajuli Sandstone: 350.0 m
+- Girujan Clay: 950.0 m
+- Tipam Sandstone: 1800.0 m (Porous & Permeable Sands)
+- Barail Coal-Shale: 3100.0 m (High Pressure Hydrocarbon Target)
+- Kopili Shale: 3750.0 m (Dispersive Fissile Shales)
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 37):
+DEPTH INTERVAL: 2680.64 m to 2703.51 m
+FORMATION: Surma Group
+INCIDENT CLASSIFICATION: TORQUE_DRAG
+SEVERITY: MEDIUM
+START TIME: 2022-03-26 00:00:00 | NPT RECORDED: 3.2 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.
+
+FINAL OUTCOME & LESSONS LEARNED:
+Torque stabilized back to 16 kN.m. Resumed drilling.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.25 sg
+- Volume Lost / Gained: 0 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

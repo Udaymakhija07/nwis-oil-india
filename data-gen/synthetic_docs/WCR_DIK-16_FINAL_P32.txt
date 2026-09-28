@@ -1,0 +1,35 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: DIK-16                       WELL NAME: Well Dikom #16
+FIELD: Dikom                           BLOCK: BLOCK-ASSAM-OIL-01
+RIG: OIL-RIG-12                               SPUD DATE: 2020-09-05
+KB ELEVATION: 125.91 m               TARGET DEPTH (TD): 3848 m MD / 3538.31 m TVD
+SURFACE COORD: LAT 27.473031 N, LON 95.130736 E
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 32):
+DEPTH INTERVAL: 4031.59 m to 4047.05 m
+FORMATION: Kopili Shale
+INCIDENT CLASSIFICATION: STUCK
+SEVERITY: HIGH
+START TIME: 2020-11-12 00:00:00 | NPT RECORDED: 10.0 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.
+
+FINAL OUTCOME & LESSONS LEARNED:
+String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.3 sg
+- Volume Lost / Gained: 0 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

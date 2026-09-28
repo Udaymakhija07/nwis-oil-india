@@ -1,0 +1,43 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: DIK-08                       WELL NAME: Well Dikom #08
+FIELD: Dikom                           BLOCK: BLOCK-ASSAM-OIL-01
+RIG: OIL-RIG-12                               SPUD DATE: 2023-05-01
+KB ELEVATION: 112.74 m               TARGET DEPTH (TD): 4117 m MD / 3950.32 m TVD
+SURFACE COORD: LAT 27.522754 N, LON 95.101162 E
+--------------------------------------------------------------------------------
+GEOLOGICAL FORMATION TOPS:
+- Alluvium: 0.0 m
+- Dhekiajuli Sandstone: 350.0 m
+- Girujan Clay: 950.0 m
+- Tipam Sandstone: 1800.0 m (Porous & Permeable Sands)
+- Barail Coal-Shale: 3100.0 m (High Pressure Hydrocarbon Target)
+- Kopili Shale: 3750.0 m (Dispersive Fissile Shales)
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 12):
+DEPTH INTERVAL: 2377.74 m to 2407.57 m
+FORMATION: Tipam Sandstone
+INCIDENT CLASSIFICATION: LOSS
+SEVERITY: WARNING
+START TIME: 2020-08-06 00:00:00 | NPT RECORDED: 6.3 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.
+
+FINAL OUTCOME & LESSONS LEARNED:
+Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.32 sg
+- Volume Lost / Gained: 37 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

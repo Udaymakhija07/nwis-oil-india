@@ -1,0 +1,43 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: NHK-17                       WELL NAME: Well Nahorkatiya #17
+FIELD: Nahorkatiya                           BLOCK: BLOCK-ASSAM-OIL-02
+RIG: OIL-RIG-07                               SPUD DATE: 2021-01-06
+KB ELEVATION: 114.71 m               TARGET DEPTH (TD): 3925 m MD / 3925.0 m TVD
+SURFACE COORD: LAT 27.334607 N, LON 95.314309 E
+--------------------------------------------------------------------------------
+GEOLOGICAL FORMATION TOPS:
+- Alluvium: 0.0 m
+- Dhekiajuli Sandstone: 350.0 m
+- Girujan Clay: 950.0 m
+- Tipam Sandstone: 1800.0 m (Porous & Permeable Sands)
+- Barail Coal-Shale: 3100.0 m (High Pressure Hydrocarbon Target)
+- Kopili Shale: 3750.0 m (Dispersive Fissile Shales)
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 35):
+DEPTH INTERVAL: 3961.61 m to 4005.55 m
+FORMATION: Kopili Shale
+INCIDENT CLASSIFICATION: STUCK
+SEVERITY: HIGH
+START TIME: 2023-11-24 00:00:00 | NPT RECORDED: 21.6 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.
+
+FINAL OUTCOME & LESSONS LEARNED:
+String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.3 sg
+- Volume Lost / Gained: 0 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

@@ -1,0 +1,35 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: NHK-17                       WELL NAME: Well Nahorkatiya #17
+FIELD: Nahorkatiya                           BLOCK: BLOCK-ASSAM-OIL-02
+RIG: OIL-RIG-07                               SPUD DATE: 2021-01-06
+KB ELEVATION: 114.71 m               TARGET DEPTH (TD): 3925 m MD / 3925.0 m TVD
+SURFACE COORD: LAT 27.334607 N, LON 95.314309 E
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 23):
+DEPTH INTERVAL: 1343.01 m to 1370.64 m
+FORMATION: Girujan Clay
+INCIDENT CLASSIFICATION: TORQUE_DRAG
+SEVERITY: MEDIUM
+START TIME: 2021-05-30 00:00:00 | NPT RECORDED: 5.4 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.
+
+FINAL OUTCOME & LESSONS LEARNED:
+Torque stabilized back to 16 kN.m. Resumed drilling.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.25 sg
+- Volume Lost / Gained: 0 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

@@ -1,0 +1,35 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: DIK-07                       WELL NAME: Well Dikom #07
+FIELD: Dikom                           BLOCK: BLOCK-ASSAM-OIL-01
+RIG: OIL-RIG-05                               SPUD DATE: 2020-12-05
+KB ELEVATION: 112.44 m               TARGET DEPTH (TD): 4123 m MD / 4123.0 m TVD
+SURFACE COORD: LAT 27.498313 N, LON 95.125054 E
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 12):
+DEPTH INTERVAL: 3646.27 m to 3666.97 m
+FORMATION: Barail Coal-Shale
+INCIDENT CLASSIFICATION: KICK
+SEVERITY: CRITICAL
+START TIME: 2022-11-30 00:00:00 | NPT RECORDED: 12.7 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.
+
+FINAL OUTCOME & LESSONS LEARNED:
+Well killed safely after 16 hours. Resumed drilling with zero gas units.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.38 sg
+- Volume Lost / Gained: 0 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

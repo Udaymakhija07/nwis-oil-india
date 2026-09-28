@@ -1,0 +1,35 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: MOR-08                       WELL NAME: Well Moran #08
+FIELD: Moran                           BLOCK: BLOCK-ASSAM-OIL-03
+RIG: OIL-RIG-09                               SPUD DATE: 2018-03-21
+KB ELEVATION: 120.41 m               TARGET DEPTH (TD): 3531 m MD / 3408.94 m TVD
+SURFACE COORD: LAT 27.248721 N, LON 94.9454 E
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 20):
+DEPTH INTERVAL: 3415.35 m to 3436.92 m
+FORMATION: Barail Coal-Shale
+INCIDENT CLASSIFICATION: KICK
+SEVERITY: CRITICAL
+START TIME: 2020-04-29 00:00:00 | NPT RECORDED: 26.3 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.
+
+FINAL OUTCOME & LESSONS LEARNED:
+Well killed safely after 16 hours. Resumed drilling with zero gas units.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.38 sg
+- Volume Lost / Gained: 0 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

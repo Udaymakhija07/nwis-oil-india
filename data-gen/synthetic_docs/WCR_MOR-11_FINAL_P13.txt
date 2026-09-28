@@ -1,0 +1,35 @@
+================================================================================
+                    OIL INDIA LIMITED (A Govt. of India Enterprise)
+                   DRILLING & WORKOVER DEPARTMENT - DULIAJAN, ASSAM
+================================================================================
+REPORT TYPE: WELL COMPLETION REPORT (WCR)
+WELL ID: MOR-11                       WELL NAME: Well Moran #11
+FIELD: Moran                           BLOCK: BLOCK-ASSAM-OIL-03
+RIG: OIL-RIG-12                               SPUD DATE: 2021-10-16
+KB ELEVATION: 127.65 m               TARGET DEPTH (TD): 3662 m MD / 3662.0 m TVD
+SURFACE COORD: LAT 27.204886 N, LON 94.921064 E
+--------------------------------------------------------------------------------
+OPERATIONAL DRILLING LOG & INCIDENT DETAILS (PAGE 13):
+DEPTH INTERVAL: 1831.0 m to 1850.95 m
+FORMATION: Girujan Clay
+INCIDENT CLASSIFICATION: TORQUE_DRAG
+SEVERITY: MEDIUM
+START TIME: 2020-07-26 00:00:00 | NPT RECORDED: 7.4 hours
+
+INCIDENT SUMMARY & ROOT CAUSE:
+Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays
+
+REMEDIAL ACTIONS / MITIGATION PUMPED:
+Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.
+
+FINAL OUTCOME & LESSONS LEARNED:
+Torque stabilized back to 16 kN.m. Resumed drilling.
+
+DRILLING FLUID PROPERTIES AT TIME OF INCIDENT:
+- Mud Type: Water-Based Bentonite / Polymer
+- Mud Weight: 1.25 sg
+- Volume Lost / Gained: 0 m3
+
+SUPERINTENDENT SIGNATURE:
+(S. K. Saikia, Chief Drilling Engineer, Oil India Ltd)
+================================================================================

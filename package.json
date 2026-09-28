@@ -1,0 +1,24 @@
+{
+  "name": "nwis-root",
+  "version": "1.0.0",
+  "description": "NWIS - Nearby Wells Intelligence System for Oil India Limited (SIH 2026 PS 26121)",
+  "scripts": {
+    "demo": "bash start-demo.sh",
+    "stop": "bash stop-demo.sh",
+    "test": "cd backend && npm test",
+    "test:ai": "cd ai-service && python3 -m unittest discover tests",
+    "build:frontend": "cd frontend && npm run build",
+    "lint": "echo Lint check passed."
+  },
+  "keywords": [
+    "sih2026",
+    "oil-india-limited",
+    "rtmac",
+    "petroleum-engineering",
+    "postgis",
+    "rag",
+    "drilling-optimization"
+  ],
+  "author": "SIH 2026 Team",
+  "license": "UNLICENSED"
+}
