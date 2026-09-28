@@ -1,192 +1,204 @@
-# 🎥 NWIS (Nearby Wells Intelligence System) — 5-Minute YouTube Demo Video Script & Screen Recording Guide
+# 🎥 NWIS: 5-Minute YouTube Demo Video — Master Script & Screen Action Guide
 
 **Project:** Nearby Wells Intelligence System (NWIS)  
 **Organization:** Oil India Limited (eRTMAC Duliajan Headquarters)  
 **Competition:** Smart India Hackathon (SIH 2026) | Problem Statement ID: `26121`  
 **Target Duration:** Exactly 5 Minutes (00:00 – 05:00)  
-**Voiceover Language:** Hinglish (Professional conversational Hindi + Technical English)
+**Format:**
+- 🎙️ **Spoken Voiceover Script:** **100% Professional Fluent English** (Evaluator & Judge Ready).
+- 🖱️ **Screen & Mouse Instructions:** **Hinglish** (Aapko screen par kab, kahan click karna hai aur kya change karke live dikhana hai).
 
 ---
 
-## ⏱️ Video Timeline Overview
+## ⏱️ Video Timeline at a Glance
 
-| Section | Timestamp | Module / Screen | Core Topic Covered |
+| Segment | Timestamp | Module / Screen | Live Demo Action |
 | :--- | :--- | :--- | :--- |
-| **1. Hook & Problem Statement** | `00:00 - 00:40` | Top Banner & Command Center | SIH PS 26121, OIL Duliajan, NPT Loss, Subsurface Challenge |
-| **2. PostGIS Spatial Radius Engine** | `00:40 - 01:25` | Well Proximity Map | 60 Assam Wells, Sub-4ms query ($3.85\text{ ms}$), 3D Trajectory |
-| **3. Multi-Track Offset Curtain** | `01:25 - 02:05` | Offset Curtain (Hero View) | Vertical well-log correlation, Gamma Ray, Resistivity, Formation tops |
-| **4. Predictive ML Risk Engine & SHAP** | `02:05 - 02:50` | Look-Ahead Radar | ML geohazard forecast, SHAP top-3 explainability, Stuck Pipe / Kick |
-| **5. Zero-Hallucination RAG Copilot** | `02:50 - 03:40` | RAG Copilot & Document AI Hub | Semantic Q&A with exact `[Doc, Page, Quote]` citations + 100% F1 OCR |
-| **6. Live eRTMAC Simulator & Alerts** | `03:40 - 04:25` | Drilling Simulator | Real-time telemetry streaming, Look-Ahead warning banner (42m lead) |
-| **7. Pre-Spud Dossier & Conclusion** | `04:25 - 05:00` | Pre-Spud Brief & Summary | 1-Click PSHB PDF Export, ROI, Zero-Downtime Architecture |
+| **1. Hook & Overview** | `00:00 - 00:40` | Top Navbar & Command Center | Top metrics hover, official Oil India & Ministry branding |
+| **2. PostGIS Spatial Engine** | `00:40 - 01:25` | Well Proximity Map | **Live Slider drag (10km -> 25km)**, Focus switch, Well Pin click |
+| **3. Offset Curtain (Hero)** | `01:25 - 02:05` | Offset Curtain | Vertical multi-track scroll, Depth log correlation, Hazard callout |
+| **4. Predictive ML & SHAP** | `02:05 - 02:50` | Look-Ahead Radar | 3 Risk gauges, **SHAP Feature Importance hover**, AI Mitigations |
+| **5. RAG Copilot & Doc AI** | `02:50 - 03:40` | RAG Copilot & Review Queue | **Live Preset Query**, **Click Citation Modal**, **Live AI Extract (118ms)** |
+| **6. Live eRTMAC Simulator** | `03:40 - 04:25` | Drilling Simulator | **Click "Start Real-Time Stream"**, **Trigger 42m Look-Ahead Alert** |
+| **7. Pre-Spud Dossier & Wrap**| `04:25 - 05:00` | Pre-Spud Offset Brief | **Print / Export PDF Preview**, Production Architecture Wrap-up |
 
 ---
 
-## 🎬 Second-by-Second Walkthrough & Voiceover Script
+## 🎬 Detailed Second-by-Second Walkthrough
 
 ---
 
 ### ⏱️ Segment 1: Hook, Problem Statement & Architecture (`00:00` - `00:40`)
 
-#### 🖥️ Screen Recording Action:
-1. **At `00:00`:** Browser is on `http://localhost:5173` showing the **Command Center** dashboard.
-2. Mouse cursor smoothly highlights:
-   - Top enterprise navbar: **Official Oil India Limited logo**, **भारत सरकार / Ministry of Petroleum & Natural Gas**, and **Live eRTMAC Connected** badge.
-   - 4 Top Metric Cards: `60 Total Wells`, `21 Active In-Radius Offsets`, `3.85 ms PostGIS Latency`, `99.8% AI Extraction Accuracy`.
-3. Mouse hovers over the **Formation Tops Prognosis** bar and the **Risk Probability gauge**.
+#### 🖱️ Screen Recording Action (Hinglish Guide):
+1. **At `00:00`:** Safari/Chrome ko full-screen me rakhein on `http://localhost:5173`. Screen par **Command Center** open hona chahiye.
+2. Mouse cursor ko top navbar par le jayein:
+   - **Official Oil India Limited Logo** aur **"भारत सरकार / Ministry of Petroleum & Natural Gas"** title ko cursor se highlight karein.
+   - Right side me **"eRTMAC: CONNECTED"** (pulsing green dot) aur **Live IST Clock** dikhayein.
+3. Mouse ko neeche laakar 4 main Metric Cards par hover karein:
+   - `60 Total Wells` (Dikom, Nahorkatiya, Moran)
+   - `21 In-Radius Offsets`
+   - `3.85 ms PostGIS Latency`
+   - `99.8% AI Extraction Accuracy`
+4. Screen ke right side me **Risk Gauge** aur **Formation Tops Prognosis** bar par cursor smoothly move karein.
 
-#### 🎙️ Voiceover Script (Speak Clearly with Confidence):
-> *"Namaste evaluators! Main prastut kar raha hoon **NWIS — Nearby Wells Intelligence System**, jo humne develop kiya hai **Oil India Limited** ke **Smart India Hackathon 2026 Problem Statement ID 26121** ke liye.*
+#### 🎙️ Spoken Script (English — Speak Clearly and Confidently):
+> *"Welcome evaluators. Today, I am presenting the **Nearby Wells Intelligence System (NWIS)**, developed for **Oil India Limited** under **Smart India Hackathon 2026, Problem Statement ID 26121**.*
 > 
-> *Oil India Limited ke Upper Assam basin me complex thrust-fault geologies ki wajah se drilling ke dauran stuck pipe aur mud loss se crore rupaye ka Non-Productive Time (NPT) loss hota hai. NWIS ek centralized, AI-driven Subsurface Intelligence Platform hai jo eRTMAC Duliajan ko real-time offset well data aur predictive geohazard alerts provide karta hai.*
+> *In the complex thrust-fault geologies of the Upper Assam Basin, unexpected geohazards like stuck pipe and severe mud loss cost Oil India crores of rupees annually in Non-Productive Time (NPT). NWIS is an end-to-end, enterprise subsurface intelligence platform built to empower eRTMAC Duliajan with real-time offset well data, predictive risk modeling, and instant geohazard mitigation.*
 > 
-> *Aaiye platform ke live working capabilities ko dekhte hain."*
+> *Let us explore the core capabilities of the platform live."*
 
 ---
 
 ### ⏱️ Segment 2: PostGIS Proximity Engine & 3D Well Map (`00:40` - `01:25`)
 
-#### 🖥️ Screen Recording Action:
-1. **At `00:40`:** Left menu me **"Well Proximity Map"** par click karein.
-2. Canvas par **Upper Assam Basin** ke 60 wells render honge with 3 geological clusters: **Dikom Block**, **Nahorkatiya**, aur **Moran**.
-3. **At `00:55`:** Top focus buttons me **"Dikom"** par click karein (map smooth zoom karega).
-4. Top me **Radius Slider** ko `10 km` se drag karke `25 km` karein — amber radar search circle expand hoga aur bottom statistics instantly `In Radius: 21 Offsets -> 38 Offsets` me update hogi.
-5. **At `01:10`:** Canvas par active well **DIK-14** ke paas kisi bhi green/amber dot (jaise `DIK-18` ya `DIK-02`) par click karein. Right side me **Well Dossier** panel smoothly open hoga, jisme well details, formation tops, aur historical incidents dikhenge.
+#### 🖱️ Screen Recording Action (Hinglish Guide):
+1. **At `00:40`:** Left sidebar me **"Well Proximity Map"** par click karein.
+2. Upper Assam Basin ke 60 wells canvas par load honge with 3 geological fields: Dikom, Nahorkatiya, aur Moran.
+3. **🔴 LIVE INTERACTIVE CHANGE #1 (Focus Switch):**
+   - Top bar me Focus selector me **"Dikom"** button par click karein! Map smoothly zoom hokar Dikom Block par focus karega.
+4. **🔴 LIVE INTERACTIVE CHANGE #2 (Radius Slider Drag):**
+   - Top control bar me **Radius Slider** ko `10 km` se right drag karke **`25 km`** karein!
+   - Viewers ko dikhega ki amber radar circle live expand ho raha hai aur bottom toolbar me offsets count instantly update ho raha hai (`In Radius: 21 Offsets -> 38 Offsets`).
+5. **🔴 LIVE INTERACTIVE CHANGE #3 (Click on a Well Marker):**
+   - Active well `DIK-14` ke paas kisi bhi green marker (`DIK-18` ya `DIK-02`) par click karein.
+   - Notice karein ki marker dot bilkul apni jagah par rehta hai (no displacement bug) aur right side me **"Well Dossier Drawer"** smoothly open ho jata hai with exact depths, formation tops, and historical incidents!
 
-#### 🎙️ Voiceover Script:
-> *"Pehla module hai hamara **Spatial Proximity Engine**. Yahan humne Upper Assam Basin ke 60 wells — Dikom, Nahorkatiya aur Moran fields — ko map kiya hai.*
+#### 🎙️ Spoken Script (English):
+> *"Our first module is the **Spatial Proximity Engine**. Here, we visualize 60 exploratory and development wells across the Upper Assam Basin.*
 > 
-> *Industry standard 300 millisecond SLA ke muqable hamara PostGIS engine sirf **3.85 milliseconds** me radius indexing calculate karta hai.*
+> *Against the industry SLA of 300 milliseconds, our PostGIS spatial indexing engine calculates proximity in just **3.85 milliseconds**.*
 > 
-> *Jaise hi main search radius ko slider se change karta hoon, hamara proprietary **Offset Similarity Score ($S$)** spatial proximity, structural TVD dip, aur lithological correlation ko combine karke nearby wells ko dynamically rank karta hai. Green markers high-similarity wells hain ($S \ge 80\%$), aur right drawer me unka complete geological dossier live load hota hai."*
+> *As I adjust the search radius from 10 kilometers to 25 kilometers, our proprietary **Offset Similarity Score ($S$)** dynamically ranks nearby wells using spatial distance, structural TVD dip, and stratigraphy. Green markers indicate high-confidence offset analogs with similarity scores above 80%. Clicking on offset **DIK-18** instantly retrieves its complete subsurface dossier, directional profile, and past drilling events."*
 
 ---
 
 ### ⏱️ Segment 3: Multi-Track Offset Curtain (`01:25` - `02:05`)
 
-#### 🖥️ Screen Recording Action:
+#### 🖱️ Screen Recording Action (Hinglish Guide):
 1. **At `01:25`:** Sidebar me **"Offset Curtain"** (Hero View) par click karein.
-2. Vertical multi-track well correlation view display hoga.
-3. Mouse ko tracks ke upar le jaakar hover karein:
-   - Track 1: Active Well `DIK-14` (Target Trajectory)
+2. Vertical multi-track well-log correlation canvas display hoga.
+3. Mouse se left-to-right tracks dikhayein:
+   - Track 1: Planned Target Well `DIK-14`
    - Track 2: Primary Offset `DIK-18` ($S = 92.4\%$)
    - Track 3: Secondary Offset `DIK-02` ($S = 84.1\%$)
-4. Mouse se **Depth Horizon markers** (`Alluvium`, `Girujan Clay`, `Tipam Sandstone`, `Barail Coal-Shale`) par hover karein.
-5. Scroll wheel se vertical depth me thoda scroll karein (`2800m - 3400m` Barail formation tak), jahan red incident callout box dikhega (*"Loss Circulation 18 m³/hr"*).
+4. **🔴 LIVE INTERACTIVE CHANGE #4 (Vertical Depth Scrolling):**
+   - Mouse wheel se canvas me neeche scroll karein to depth **`2,800m - 3,400m`** (Barail Coal-Shale formation).
+   - `3,150m` depth par jo red incident callout box hai (*"Loss Circulation 18 m³/hr"*), us par cursor hover karein!
+   - Gamma Ray aur Resistivity log curves par mouse le jakar hover values dikhayein.
 
-#### 🎙️ Voiceover Script:
-> *"Next module hai hamara Hero Feature: **The Offset Curtain**.*
+#### 🎙️ Spoken Script (English):
+> *"Next is our hero visualization feature: **The Offset Curtain**.*
 > 
-> *Subsurface teams ke liye static tables dekhna mushkil hota hai, isliye humne vertical multi-track correlation canvas banaya hai. Left me hamara planned target well **DIK-14** hai, aur right tracks me highest ranked offsets align hain.*
+> *Subsurface teams often struggle with static correlation tables. We engineered a depth-synchronized vertical multi-track canvas that correlates planned well trajectories alongside highest-ranked offset logs.*
 > 
-> *Yahan depth-synchronized TVD tracks par Gamma Ray logs aur Resistivity profiles match hoti hain. 3,150 metre par Barail Coal-Shale transition par historical incident callout clearly alert karta hai ki offset well me severe circulation loss hua tha — jisse engineer pehle se casing aur mud weight plan kar sakte hain."*
+> *Here, target well **DIK-14** is correlated against **DIK-18** and **DIK-02**. Scrolling down to 3,150 meters TVD within the Barail Coal-Shale formation, an interactive geohazard callout immediately flags that the offset well encountered a severe mud loss of 18 cubic meters per hour. This enables drilling superintendents to proactively design casing seats and mud density before spudding."*
 
 ---
 
-### ⏱️ Segment 4: Predictive ML Risk Radar & SHAP Explainability (`02:05` - `02:50`)
+### ⏱️ Segment 4: Predictive ML Risk Radar & SHAP (`02:05` - `02:50`)
 
-#### 🖥️ Screen Recording Action:
+#### 🖱️ Screen Recording Action (Hinglish Guide):
 1. **At `02:05`:** Sidebar me **"Look-Ahead Radar"** (ML Risk) par click karein.
-2. Screen par 3 risk probability meters load honge:
-   - **Stuck Pipe Risk:** `84.2% (CRITICAL)`
-   - **Lost Circulation:** `68.5% (HIGH)`
-   - **Well Control / Kick:** `24.1% (LOW)`
-3. Mouse ko **SHAP Top-3 Feature Drivers** bar chart par hover karein:
-   - Feature 1: `Mud Weight Underbalance (-0.08 SG)` (+42% impact)
-   - Feature 2: `Differential Overpressure in Girujan` (+28% impact)
-   - Feature 3: `Dogleg Severity (> 3.8°/30m)` (+14% impact)
-4. Bottom me **Recommended Mitigations** card dikhayein (*"Increase mud weight to 1.28 SG, reduce ROP to 6 m/hr"*).
+2. Screen par 3 risk dials display honge:
+   - **Stuck Pipe Risk:** `84.2% (CRITICAL)` (red dial)
+   - **Lost Circulation Risk:** `68.5% (HIGH)` (amber dial)
+   - **Well Control / Kick:** `24.1% (LOW)` (green dial)
+3. **🔴 LIVE INTERACTIVE CHANGE #5 (SHAP Drivers Hover):**
+   - Mouse cursor ko **SHAP Top-3 Feature Drivers** bar chart par le jayein:
+     - Driver 1: `Mud Weight Underbalance (-0.08 SG)` -> `+42%` impact
+     - Driver 2: `Differential Overpressure in Girujan` -> `+28%` impact
+     - Driver 3: `Dogleg Severity (> 3.8°/30m)` -> `+14%` impact
+4. Screen ke bottom me **AI Recommended Mitigations** card dikhayein (*"Increase mud weight to 1.28 SG, reduce ROP to 6 m/hr"*).
 
-#### 🎙️ Voiceover Script:
-> *"Ab aate hain hamare **Predictive AI/ML Engine** par.*
+#### 🎙️ Spoken Script (English):
+> *"Moving to our **Predictive AI and Machine Learning Engine**.*
 > 
-> *NWIS sirf historical data nahi dikhata, balki upcoming formation ke drilling geohazards ko predict karta hai. Humne trained ML classification models integrate kiye hain jo Stuck Pipe, Lost Circulation aur Kick risk forecast karte hain.*
+> *NWIS does not merely display historical logs — it forecasts upcoming geohazards. Our ensemble models predict probabilities for Stuck Pipe, Lost Circulation, and Well Control events.*
 > 
-> *Sabse important: **Zero Black-Box AI**. Har prediction ke saath **SHAP (Shapley Additive Explanations)** drivers hain jo drilling engineer ko exact reason batate hain — jaise yahan Stuck Pipe risk 84% hone ka mukhya karan mud weight underbalance aur high dogleg severity hai, saath me instant remedial recommendations di gayi hain."*
+> *Most importantly, we maintain a strict **Zero Black-Box AI policy**. Using **SHAP (Shapley Additive Explanations)**, every prediction is fully explainable. The system reveals that the 84% Stuck Pipe risk is primarily driven by mud weight underbalance and high dogleg severity. Alongside the risk score, the model immediately recommends operational mitigations, such as raising mud weight to 1.28 specific gravity and reducing rate of penetration."*
 
 ---
 
-### ⏱️ Segment 5: Zero-Hallucination RAG Copilot & Document AI Hub (`02:50` - `03:40`)
+### ⏱️ Segment 5: Zero-Hallucination RAG Copilot & Document AI (`02:50` - `03:40`)
 
-#### 🖥️ Screen Recording Action:
+#### 🖱️ Screen Recording Action (Hinglish Guide):
 1. **At `02:50`:** Sidebar me **"RAG Copilot (Ask NWIS)"** par click karein.
-2. Chat box me preset prompt button par click karein:
-   - *"What geohazards were encountered in the Barail formation of DIK-02?"*
-3. AI streaming response generate karega (1-2 seconds).
-4. Response ke neeche **Sentence-Level Citation Badge** (`[DIK-02, WCR_1998, Page 14]`) par click karein!
-5. Screen par **Verified Source Citation Modal** popup khulega, jisme exact OCR snippet aur page highlight hoga!
-6. **At `03:20`:** Sidebar me **"Document AI Review"** par click karein:
-   - Tab 2 **"Live AI Extractor"** par click karein.
-   - Textbox me sample DDR report paste/click karke **"Extract Geohazard Entities"** dabayein — 118ms me JSON schema extract hokar dikhega.
-   - Tab 3 **"Benchmark Metrics"** par click karein: Table me **F1-Score = 1.000**, Precision = 1.000, Recall = 1.000 display hoga!
+2. **🔴 LIVE INTERACTIVE CHANGE #6 (Run Preset AI Query):**
+   - Chat input ke upar jo preset chip hai: *"What geohazards were encountered in the Barail formation of DIK-02?"* uspar click karein!
+   - 1-2 seconds me AI answer stream hoga with technical mud weight and formation tops.
+3. **🔴 LIVE INTERACTIVE CHANGE #7 (Click Source Citation Badge):**
+   - Generated answer ke neeche sentence-level citation badge **`[DIK-02, WCR_1998, Page 14]`** par click karein!
+   - Screen par **"Verified Source Citation Modal"** popup open hoga, jisme exact OCR sentence quote, page number, aur 98% extraction confidence dikhega. "Close Citation" dabayein.
+4. **🔴 LIVE INTERACTIVE CHANGE #8 (Document AI Playground & Benchmark):**
+   - Sidebar me **"Document AI Review"** par click karein.
+   - Tab 2 **"Live AI Extractor"** par click karein aur **"Extract Geohazard Entities"** dabayein — 118ms me structured JSON output live extract hoga!
+   - Tab 3 **"Benchmark Metrics"** par click karein — Table me **F1-Score = 1.000**, Precision = 1.000 dikhayein!
 
-#### 🎙️ Voiceover Script:
-> *"Subsurface engineering me AI hallucination jaanleva ho sakti hai. Isliye hamara **RAG Copilot** strictly **Zero-Hallucination** policy par chalta hai.*
+#### 🎙️ Spoken Script (English):
+> *"In safety-critical drilling operations, AI hallucinations can cause catastrophic blowouts. Therefore, our **RAG Copilot** enforces strict, verifiable sentence-level provenance.*
 > 
-> *Jab hum puchte hain ki Barail formation me kya geohazards the, copilot 47 historical WCR aur DDR documents se semantic chunk retrieve karta hai. Notice kijiye: **Sentence-level citations**! Is citation par click karte hi original scanned document ka page number, exact quote aur extraction confidence khul jata hai.*
+> *When querying historical hazards in the Barail formation, the copilot semantically searches across 47 Well Completion and Daily Drilling reports. Clicking directly on the citation badge opens the verified evidence modal, displaying the exact OCR quote, source document ID, page number, and confidence score.*
 > 
-> *Hamare **Document AI pipeline** ne 47 ground-truth reports par **1.000 F1 score** benchmark deliver kiya hai, jo scanned PDFs ko 118 milliseconds me structured geohazard database me badal deta hai."*
+> *Powering this is our **Document AI Pipeline**, benchmarked on 47 ground-truth reports with a **perfect 1.000 F1-score**, converting unstructured scanned PDFs into structured geohazard JSON in just 118 milliseconds."*
 
 ---
 
-### ⏱️ Segment 6: eRTMAC Live Telemetry Simulator & Look-Ahead Alerts (`03:40` - `04:25`)
+### ⏱️ Segment 6: eRTMAC Live Telemetry Simulator (`03:40` - `04:25`)
 
-#### 🖥️ Screen Recording Action:
+#### 🖱️ Screen Recording Action (Hinglish Guide):
 1. **At `03:40`:** Sidebar me **"Drilling Simulator"** (Live Stream) par click karein.
-2. Top right me **"Start Real-Time Stream"** (Green play button) par click karein.
-3. Telemetry streams start ho jayengi:
-   - Bit Depth counter rapidly advance karega: `3180m -> 3192m -> 3210m MD`.
-   - ROP, WOB, Torque, Standpipe Pressure (SPP) gauges animate honge.
-4. **At `04:00`:** Jaise hi Bit Depth `3,208m` touch karegi:
-   - Screen par ek **Flash Critical Warning Banner** trigger hoga:
+2. **🔴 LIVE INTERACTIVE CHANGE #9 (Start Real-Time WITSML Stream):**
+   - Top right me green button **"Start Real-Time Stream"** par click karein!
+   - Bit Depth counter fast count hona shuru karega: `3,180m -> 3,195m -> 3,208m MD`.
+   - ROP, WOB, Torque, aur Standpipe Pressure ke gauges animated needle ke saath fluctuate honge.
+3. **🔴 LIVE INTERACTIVE CHANGE #10 (Look-Ahead Alert Trigger):**
+   - Jaise hi Bit Depth **`3,208m`** cross karegi, screen ke top par **Critical Warning Flash Banner** trigger hoga:
      *"LOOK-AHEAD ALERT: High Loss Zone at 3,250m MD (Lead Distance: 42m, Time-to-Reach: 2.6 hours)"*.
-   - Sound / Pulse warning trigger hogi.
-5. Mouse se **"Review Mitigations"** button par click karein.
+   - Mouse se banner ke andar **"Review Mitigations"** button par click karein.
 
-#### 🎙️ Voiceover Script:
-> *"Yeh hai hamara sabse dynamic module: **eRTMAC Live Telemetry Simulator**.*
+#### 🎙️ Spoken Script (English):
+> *"Now, let us examine our most dynamic capability: **The eRTMAC Live Telemetry Simulator**.*
 > 
-> *Yahan hum Oil India ke Duliajan control room me aane wale live WITSML drilling stream ko simulate karte hain. ROP, WOB aur torque gauges real-time update ho rahe hain.*
+> *Here, we simulate real-time WITSML sensor streams arriving at Oil India's Duliajan real-time operations center. As I initiate the live stream, Bit Depth, ROP, Weight on Bit, and Torque advance dynamically.*
 > 
-> *Aur dekhiye — jaise hi hamari bit 3,208m depth par aati hai, hamara **Look-Ahead Engine** trigger hota hai! Bit se **42 metre pehle (2.6 ghante ka lead time)** platform drilling superintendent ko alert karta hai ki aage Barail sand me severe loss zone aane wala hai. Isse bit touch karne se pehle hi LCM pill prepare ki ja sakti hai."*
+> *Notice what happens as the bit crosses 3,208 meters: our **Look-Ahead Alert Engine** fires! With **42 meters of lead distance and 2.6 hours of lead time**, the platform warns the drilling superintendent of an imminent loss zone ahead. This allows the crew to condition mud and spot loss circulation material hours before the bit penetrates the hazardous formation."*
 
 ---
 
-### ⏱️ Segment 7: Pre-Spud Brief Generator & Conclusion (`04:25` - `05:00`)
+### ⏱️ Segment 7: Pre-Spud Dossier & Conclusion (`04:25` - `05:00`)
 
-#### 🖥️ Screen Recording Action:
+#### 🖱️ Screen Recording Action (Hinglish Guide):
 1. **At `04:25`:** Sidebar me **"Pre-Spud Offset Brief"** par click karein.
-2. Screen par **Official Pre-Spud Geohazard Dossier (PSHB)** beautifully formatted display hoga:
-   - Official Oil India Limited header logo.
-   - Target Well DIK-14 specifications.
-   - Top 5 Offset Well Summary table with Similarity Index.
-   - Predicted Casing Point recommendations.
-3. Top-right me **"Print / Export PDF"** button par hover karein.
-4. **At `04:45`:** Sidebar me wapas **"Command Center"** par click karein, aur cursor ko center me rakhein.
+2. Official Oil India branded **Pre-Spud Hazard Brief (PSHB)** document screen par load hoga:
+   - Official header logo
+   - Target Well DIK-14 summary table
+   - Top-5 offset similarity matrix
+   - Casing point recommendations
+3. **🔴 LIVE INTERACTIVE CHANGE #11 (Print / PDF Preview):**
+   - Top right me **"Print / Export PDF"** button par mouse le jayein aur click karein (print dialog open hoga, fir Cancel karke smooth return karein).
+4. **At `04:45`:** Sidebar me wapas **"Command Center"** par click karein, aur cursor center me rakhein.
 
-#### 🎙️ Voiceover Script:
-> *"Drilling shuru hone se pehle superintendent ko hafte bhar manual report banane ki zaroorat nahi. Hamara **Pre-Spud Offset Dossier Generator** single click me AI-audited, print-ready PSHB PDF export karta hai.*
+#### 🎙️ Spoken Script (English):
+> *"Finally, instead of spending days manually compiling offset reports, our **Pre-Spud Offset Brief Generator** produces an AI-verified, print-ready Pre-Spud Hazard Brief in a single click.*
 > 
-> *Production-Ready Highlights:*
-> * Monorepo with React 18, FastAPI Python AI service, aur PostGIS database.
-> * Dual-engine failover: PostgreSQL offline hone par zero-downtime memory data store.
-> * Full test coverage, clean enterprise design, aur complete Oil India official branding.*
+> *To summarize our production engineering:*
+> - *React 18 frontend with seamless single-navbar enterprise UX.*
+> - *High-performance FastAPI microservice and sub-4ms PostGIS spatial queries.*
+> - *Zero-downtime in-memory fallback, ensuring zero installation friction on evaluator systems.*
 > 
-> *NWIS Oil India Limited ko safer drilling, zero surprises, aur karodon rupaye ki bachat pradan karta hai. Dhanyawad!"*
+> *NWIS transforms raw subsurface data into proactive, life-saving intelligence for Oil India Limited. Thank you!"*
 
 ---
 
-## 💡 Quick Tips for Flawless Screen Recording
+## 🏆 Checklist for Recording
 
-1. **Browser Setup:**
-   - Chrome ya Safari ko **1920x1080** full-screen me rakhein (`Cmd + Shift + F` ya browser maximize).
-   - Zoom level ko **100%** par set karein (`Cmd + 0`).
-2. **Audio Recording:**
-   - Quiet room me record karein with clear USB mic or earphone mic.
-   - Script ko 2-3 baar bolkar practice karein taaki pauses natural lagein.
-3. **Cursor Movement:**
-   - Cursor ko sharp aur steady move karein — bilkul hurry me mat hilayein.
-   - Har click ke baad 1 second wait karein taaki viewers animation dekh sakein.
-4. **YouTube Settings:**
-   - Video title: `NWIS - Nearby Wells Intelligence System | Oil India Limited | SIH 2026 (PS 26121)`
-   - Quality: Export at **1080p 60fps**.
+1. **Before Recording:**
+   - Dev servers running: Frontend on `localhost:5173`, Backend on `5050`, AI service on `8000`.
+   - Browser full-screen (`Cmd + Ctrl + F` on Mac) with zoom at 100% (`Cmd + 0`).
+   - Clean desktop without distractions.
+2. **Audio Setup:**
+   - Test mic volume — ensure speech is crisp, clear, and without background fan noise.
+3. **Pacing:**
+   - Don't rush! Speak at a steady, authoritative pace. The script is calibrated for ~130 words per minute, exactly fitting the 5-minute limit.
