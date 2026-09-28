@@ -16,36 +16,131 @@ import { useWellStore } from "../store/useWellStore";
 
 export default function PredictiveRadar() {
   const { activeWellId } = useWellStore();
+  const [activeFormationHorizon, setActiveFormationHorizon] = useState("TIPAM");
   const [predictionData, setPredictionData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const currentBitDepth = 2268.0;
-
-  useEffect(() => {
-    async function loadPredictions() {
-      try {
-        const res = await fetch("http://localhost:5050/api/ml/predict", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            active_depth_md: currentBitDepth,
-            current_params: { flow_in: 2400, flow_out: 2368, ecd: 1.33, torque: 18.4, pit_vol: 82.5 },
-            aligned_offsets: ["DIK-04", "DIK-02", "DIK-07", "DIK-09"]
-          })
-        });
-        if (res.ok) {
-          setPredictionData(await res.json());
+  // Calibrated geological formation horizons for Upper Assam Basin
+  const scenarios = {
+    TIPAM: {
+      depth: 2268.0,
+      formation: "Tipam Sandstone",
+      params: { flow_in: 2400, flow_out: 2368, ecd: 1.33, torque: 18.4, pit_vol: 82.5, spp: 2410 },
+      predictions: {
+        MUD_LOSS: {
+          probability: 0.865,
+          composite_score: 0.857,
+          risk_level: "CRITICAL",
+          shap_top_3: [
+            { feature: "Offset Well Loss Density", impact: "+35% risk (4 nearby offsets)" },
+            { feature: "Flow Out Deficit (-32 L/min)", impact: "+25% early seepage" },
+            { feature: "High ECD (1.33 sg)", impact: "+18% fracture pressure exceedance" }
+          ],
+          suggested_mitigation: "Pre-treat active system with 25-30 ppb coarse LCM pill. Lower flow rate by 10% to keep ECD < 1.30 sg."
+        },
+        STUCK_PIPE: {
+          probability: 0.22,
+          composite_score: 0.24,
+          risk_level: "INFO",
+          shap_top_3: [
+            { feature: "Torque Residual CUSUM", impact: "Normal drag envelope" },
+            { feature: "Offset Frequency", impact: "No tight hole in Tipam" }
+          ],
+          suggested_mitigation: "Maintain steady rotary speed > 100 RPM."
+        },
+        KICK: {
+          probability: 0.15,
+          composite_score: 0.18,
+          risk_level: "INFO",
+          shap_top_3: [
+            { feature: "D-Exponent Pore Pressure", impact: "Normal pore pressure" }
+          ],
+          suggested_mitigation: "Standard flow checks on connections."
         }
-      } catch (err) {}
-      setLoading(false);
+      }
+    },
+    BARAIL: {
+      depth: 3150.0,
+      formation: "Barail Coal-Shale",
+      params: { flow_in: 2200, flow_out: 2245, ecd: 1.36, torque: 21.2, pit_vol: 84.8, spp: 2550 },
+      predictions: {
+        MUD_LOSS: {
+          probability: 0.32,
+          composite_score: 0.35,
+          risk_level: "WATCH",
+          shap_top_3: [
+            { feature: "Moderate Permeability", impact: "+15% seepage" },
+            { feature: "Offset Loss Logs", impact: "1 minor loss event" }
+          ],
+          suggested_mitigation: "Keep 15 ppb fine calcium carbonate in reserve."
+        },
+        STUCK_PIPE: {
+          probability: 0.28,
+          composite_score: 0.30,
+          risk_level: "WATCH",
+          shap_top_3: [
+            { feature: "Coal Intercalations", impact: "+18% mechanical drag" },
+            { feature: "Dogleg Stability", impact: "Acceptable 2.4°/30m" }
+          ],
+          suggested_mitigation: "Perform wiper trip every 150m."
+        },
+        KICK: {
+          probability: 0.794,
+          composite_score: 0.812,
+          risk_level: "CRITICAL",
+          shap_top_3: [
+            { feature: "High Gas Peak (140 units)", impact: "+45% hydrocarbon surge" },
+            { feature: "Pore Pressure Ramp (1.35 SG)", impact: "+28% overpressure" },
+            { feature: "Flow Out Increase (+25 LPM)", impact: "+16% kick indicator" }
+          ],
+          suggested_mitigation: "Weight up active mud to 1.38 SG. Space out, shut down mud pumps, and perform immediate flow check."
+        }
+      }
+    },
+    KOPILI: {
+      depth: 3650.0,
+      formation: "Kopili Shale Transition",
+      params: { flow_in: 2100, flow_out: 2095, ecd: 1.38, torque: 26.5, pit_vol: 82.0, spp: 2720 },
+      predictions: {
+        MUD_LOSS: {
+          probability: 0.18,
+          composite_score: 0.20,
+          risk_level: "INFO",
+          shap_top_3: [
+            { feature: "Low Formation Permeability", impact: "Impermeable shale" }
+          ],
+          suggested_mitigation: "Standard drilling fluid monitoring."
+        },
+        STUCK_PIPE: {
+          probability: 0.824,
+          composite_score: 0.841,
+          risk_level: "CRITICAL",
+          shap_top_3: [
+            { feature: "Smectite Reactive Clay Swelling", impact: "+40% severe tight hole" },
+            { feature: "High Dogleg Severity (4.1°/30m)", impact: "+26% key seating risk" },
+            { feature: "Overbalance Drag Margin", impact: "+18% differential sticking" }
+          ],
+          suggested_mitigation: "Add PHPA clay stabilizer to mud. Pump high-viscosity sweeps every 2 stands. Limit static connection time to < 2 minutes."
+        },
+        KICK: {
+          probability: 0.12,
+          composite_score: 0.15,
+          risk_level: "INFO",
+          shap_top_3: [
+            { feature: "Pore Pressure Envelope", impact: "Normal hydrostatic" }
+          ],
+          suggested_mitigation: "Standard mud logging monitoring."
+        }
+      }
     }
-    loadPredictions();
-  }, [activeWellId]);
+  };
 
-  const predictions = predictionData?.predictions;
+  const currentScenario = scenarios[activeFormationHorizon];
+  const predictions = currentScenario.predictions;
+  const currentParams = currentScenario.params;
 
   return (
-    <div className="flex-1 flex flex-col h-full overflow-y-auto bg-slate-50 p-8 space-y-8 text-slate-800">
+    <div className="flex-1 flex flex-col h-full overflow-y-auto bg-slate-50 p-8 space-y-6 text-slate-800">
       {/* Top Header */}
       <div className="flex items-center justify-between pb-4 border-b border-slate-200">
         <div>
@@ -62,9 +157,59 @@ export default function PredictiveRadar() {
 
         <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-mono font-medium shadow-xs">
           <Activity className="w-3.5 h-3.5 text-amber-600 animate-spin" />
-          <span>Active Bit @ {currentBitDepth}m MD (Tipam Sandstone)</span>
+          <span>Bit @ {currentScenario.depth}m MD ({currentScenario.formation})</span>
         </div>
       </div>
+
+      {/* Interactive Horizon Forecast Switcher */}
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+            <Sliders className="w-3.5 h-3.5 text-amber-600" />
+            Simulate Horizon:
+          </span>
+          <span className="text-xs text-slate-400">|</span>
+        </div>
+
+        <div className="flex items-center gap-2 flex-wrap">
+          <button
+            onClick={() => setActiveFormationHorizon("TIPAM")}
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
+              activeFormationHorizon === "TIPAM"
+                ? "bg-rose-50 text-rose-900 border-2 border-rose-300 font-bold shadow-xs"
+                : "bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200/70"
+            }`}
+          >
+            <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+            <span>1. Tipam Sandstone @ 2,268m (Severe Mud Loss Zone)</span>
+          </button>
+
+          <button
+            onClick={() => setActiveFormationHorizon("BARAIL")}
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
+              activeFormationHorizon === "BARAIL"
+                ? "bg-amber-50 text-amber-900 border-2 border-amber-400 font-bold shadow-xs"
+                : "bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200/70"
+            }`}
+          >
+            <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+            <span>2. Barail Gas Sand @ 3,150m (Gas Kick Risk)</span>
+          </button>
+
+          <button
+            onClick={() => setActiveFormationHorizon("KOPILI")}
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
+              activeFormationHorizon === "KOPILI"
+                ? "bg-blue-50 text-blue-900 border-2 border-blue-300 font-bold shadow-xs"
+                : "bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200/70"
+            }`}
+          >
+            <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+            <span>3. Kopili Transition @ 3,650m (Stuck Pipe Risk)</span>
+          </button>
+        </div>
+      </div>
+
 
       {/* Main 3 Hazard Predictor Cards */}
       {predictions && (
@@ -254,34 +399,47 @@ export default function PredictiveRadar() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 font-mono text-center">
           <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
             <span className="text-[11px] text-slate-400 block font-medium">Flow In</span>
-            <p className="text-base font-bold text-slate-900 mt-1">2,400 LPM</p>
+            <p className="text-base font-bold text-slate-900 mt-1">{currentParams.flow_in.toLocaleString()} LPM</p>
           </div>
-          <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200">
-            <span className="text-[11px] text-rose-700 block font-medium">Flow Out</span>
-            <p className="text-base font-bold text-rose-700 mt-1">2,368 LPM</p>
-            <span className="text-[10px] text-rose-700 font-bold block mt-0.5">-32 LPM deficit</span>
+          <div className={`p-4 rounded-2xl border ${
+            currentParams.flow_out < currentParams.flow_in 
+              ? "bg-rose-50 border-rose-200 text-rose-700" 
+              : currentParams.flow_out > currentParams.flow_in
+              ? "bg-amber-50 border-amber-200 text-amber-800"
+              : "bg-slate-50 border-slate-200 text-slate-900"
+          }`}>
+            <span className="text-[11px] block font-medium">Flow Out</span>
+            <p className="text-base font-bold mt-1">{currentParams.flow_out.toLocaleString()} LPM</p>
+            <span className="text-[10px] font-bold block mt-0.5">
+              {currentParams.flow_out - currentParams.flow_in < 0 
+                ? `${currentParams.flow_out - currentParams.flow_in} LPM deficit` 
+                : currentParams.flow_out - currentParams.flow_in > 0
+                ? `+${currentParams.flow_out - currentParams.flow_in} LPM surge`
+                : "Balanced"}
+            </span>
           </div>
           <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
             <span className="text-[11px] text-slate-400 block font-medium">Pit Volume</span>
-            <p className="text-base font-bold text-amber-800 mt-1">82.5 m³</p>
-            <span className="text-[10px] text-slate-400 block mt-0.5">-0.8 m³ drift</span>
+            <p className="text-base font-bold text-amber-800 mt-1">{currentParams.pit_vol} m³</p>
           </div>
-          <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200">
-            <span className="text-[11px] text-rose-700 block font-medium">ECD</span>
-            <p className="text-base font-bold text-rose-700 mt-1">1.33 sg</p>
-            <span className="text-[10px] text-rose-700 font-bold block mt-0.5">+0.03 sg excess</span>
+          <div className={`p-4 rounded-2xl border ${
+            currentParams.ecd > 1.35 ? "bg-rose-50 border-rose-200 text-rose-700" : "bg-slate-50 border-slate-200"
+          }`}>
+            <span className="text-[11px] text-slate-400 block font-medium">ECD</span>
+            <p className="text-base font-bold text-slate-900 mt-1">{currentParams.ecd} sg</p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <div className={`p-4 rounded-2xl border ${
+            currentParams.torque > 25 ? "bg-amber-50 border-amber-200 text-amber-800" : "bg-slate-50 border-slate-200"
+          }`}>
             <span className="text-[11px] text-slate-400 block font-medium">Torque</span>
-            <p className="text-base font-bold text-slate-900 mt-1">18.4 kN.m</p>
-            <span className="text-[10px] text-slate-400 block mt-0.5">Normal</span>
+            <p className="text-base font-bold text-slate-900 mt-1">{currentParams.torque} kN.m</p>
           </div>
           <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
             <span className="text-[11px] text-slate-400 block font-medium">SPP</span>
-            <p className="text-base font-bold text-slate-900 mt-1">2,410 psi</p>
-            <span className="text-[10px] text-slate-400 block mt-0.5">Stable</span>
+            <p className="text-base font-bold text-slate-900 mt-1">{currentParams.spp} psi</p>
           </div>
         </div>
+
       </div>
     </div>
   );
