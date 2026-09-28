@@ -78,22 +78,28 @@
 
 #### 🖱️ Screen Recording Action (Hinglish Guide):
 1. **At `01:25`:** Sidebar me **"Offset Curtain"** (Hero View) par click karein.
-2. Vertical multi-track well-log correlation canvas display hoga.
-3. Mouse se left-to-right tracks dikhayein:
-   - Track 1: Planned Target Well `DIK-14`
-   - Track 2: Primary Offset `DIK-18` ($S = 92.4\%$)
-   - Track 3: Secondary Offset `DIK-02` ($S = 84.1\%$)
-4. **🔴 LIVE INTERACTIVE CHANGE #4 (Vertical Depth Scrolling):**
-   - Mouse wheel se canvas me neeche scroll karein to depth **`2,800m - 3,400m`** (Barail Coal-Shale formation).
-   - `3,150m` depth par jo red incident callout box hai (*"Loss Circulation 18 m³/hr"*), us par cursor hover karein!
-   - Gamma Ray aur Resistivity log curves par mouse le jakar hover values dikhayein.
+2. Vertical multi-track well-log correlation canvas load hoga (isme 0m se 4000m depth puri screen me fitted hai, scroll karne ki zaroorat nahi hai).
+3. **🔴 LIVE INTERACTIVE CHANGE #4 (Add/Remove Offset Track):**
+   - Top-right corner me **"Select Offsets:"** ke aage jo buttons hain (`DIK-04`, `DIK-02`, `DIK-07`, `DIK-09`), unme se **`DIK-09`** par click karein!
+   - Screen par live ek naya offset track smoothly add ho jayega!
+4. **🔴 LIVE INTERACTIVE CHANGE #5 (Click Historical Incident Badge):**
+   - Kisi bhi track par jo red color ka **"LOSS"** ya amber color ka **"KICK"** ka badge dikh raha hai (jaise `DIK-04` par), **us badge par click karein!**
+   - Screen par instant ek **"Historical Event Modal"** popup open hoga, jisme:
+     - Root cause (*"Loss circulation 18 m³/hr in Tipam"*)
+     - NPT lost hours (*"14 hrs"*)
+     - Mitigation taken (*"Spotted 25 ppb mica LCM pill"*)
+   - Modal ko **"✕"** dabakar close karein.
+5. Center track me red line (`Active Bit: 2268m MD`) ke theek neeche jo striped warning box hai (*"Projected Mud Loss Hazard"*), us par cursor le jayein.
 
 #### 🎙️ Spoken Script (English):
 > *"Next is our hero visualization feature: **The Offset Curtain**.*
 > 
-> *Subsurface teams often struggle with static correlation tables. We engineered a depth-synchronized vertical multi-track canvas that correlates planned well trajectories alongside highest-ranked offset logs.*
+> *Subsurface teams often struggle with static correlation tables. We engineered a dynamic, depth-synchronized vertical multi-track canvas that correlates planned well trajectories alongside highest-ranked offset logs.*
 > 
-> *Here, target well **DIK-14** is correlated against **DIK-18** and **DIK-02**. Scrolling down to 3,150 meters TVD within the Barail Coal-Shale formation, an interactive geohazard callout immediately flags that the offset well encountered a severe mud loss of 18 cubic meters per hour. This enables drilling superintendents to proactively design casing seats and mud density before spudding."*
+> *Notice how effortlessly we can toggle offset wells like DIK-09 to dynamically compare lithological columns. Clicking directly on this red LOSS event badge at 2,310 meters opens the historical incident breakdown, revealing that the offset well suffered 14 hours of NPT due to severe circulation loss in the Tipam formation.*
+> 
+> *Directly beneath our active bit at 2,268 meters, the platform highlights the projected geohazard zone ahead, enabling drilling superintendents to proactively design casing seats and mud density before spudding."*
+
 
 ---
 
