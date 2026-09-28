@@ -333,12 +333,13 @@ export default function WellMap() {
                   <circle
                     cx={x}
                     cy={y}
-                    r={radius}
+                    r={isHovered || isSelected ? radius + 2 : radius}
                     fill={markerColor}
-                    stroke="#ffffff"
-                    strokeWidth={fieldView === "ALL" ? "2" : "2.5"}
-                    className="transition-transform group-hover:scale-125 filter drop-shadow-sm"
+                    stroke={isSelected ? "#0f172a" : "#ffffff"}
+                    strokeWidth={isSelected ? 3 : (fieldView === "ALL" ? 2 : 2.5)}
+                    className="transition-all duration-150 filter drop-shadow-xs"
                   />
+
 
                   {/* Text Label with clean white background pill */}
                   {showLabel && (
