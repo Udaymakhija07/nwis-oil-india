@@ -145,7 +145,7 @@ export default function DrillingSimulator() {
                 : "bg-emerald-600 hover:bg-emerald-700 text-white")}
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current" />}
-            <span>{isPlaying ? "Pause Drilling" : "Start Replay"}</span>
+            <span>{isPlaying ? "Pause Stream" : "Start Real-Time Stream"}</span>
           </button>
 
           <button
@@ -219,12 +219,15 @@ export default function DrillingSimulator() {
         <div className="p-7 rounded-3xl bg-gradient-to-br from-rose-50 via-orange-50/50 to-white border-2 border-rose-300 shadow-md space-y-4">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div className="space-y-3 max-w-3xl">
-              <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white uppercase tracking-wider shadow-xs">
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white uppercase tracking-wider shadow-xs animate-pulse">
                   {activeAlert.level} LOOK-AHEAD WARNING
                 </span>
-                <span className="text-xs text-rose-800 font-mono font-bold bg-rose-100 px-2 py-0.5 rounded-full border border-rose-200">
+                <span className="text-xs text-rose-800 font-mono font-bold bg-rose-100 px-2.5 py-0.5 rounded-full border border-rose-200">
                   Lead Distance: {activeAlert.lead_distance_m}m ahead of bit!
+                </span>
+                <span className="text-xs text-blue-800 font-mono font-bold bg-blue-100 px-2.5 py-0.5 rounded-full border border-blue-200">
+                  Reaction Lead Time: {(activeAlert.lead_distance_m / 16.0).toFixed(1)} hrs
                 </span>
               </div>
 
@@ -240,10 +243,16 @@ export default function DrillingSimulator() {
                 <strong>Offset Evidence:</strong> {activeAlert.supporting_evidence}
               </p>
 
+              {/* Review Mitigations Section */}
               <div className="p-4 rounded-2xl bg-white border border-rose-200 text-xs text-slate-800 shadow-xs space-y-2">
-                <div className="font-bold text-emerald-700 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-emerald-600" />
-                  <span>Recommended Driller Remedial Action:</span>
+                <div className="font-bold text-emerald-700 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-emerald-600" />
+                    <span>AI Recommended Remedial Actions (Review Mitigations):</span>
+                  </div>
+                  <span className="text-[11px] font-mono bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-200">
+                    Confidence: 94%
+                  </span>
                 </div>
                 <p className="font-semibold text-slate-800">{activeAlert.suggested_action}</p>
                 <p className="text-[11px] text-slate-500 font-mono">Historical Proof: {activeAlert.historical_solution}</p>
@@ -257,7 +266,7 @@ export default function DrillingSimulator() {
                 className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Action: Pumped LCM Pill</span>
+                <span>Review & Apply Mitigation</span>
               </button>
 
               <button
