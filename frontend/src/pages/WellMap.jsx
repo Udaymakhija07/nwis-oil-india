@@ -93,42 +93,45 @@ export default function WellMap() {
       {/* Main Map Viewer Area */}
       <div className="flex-1 flex flex-col relative overflow-hidden">
         {/* Top Control Bar - Clean Light Header */}
-        <div className="h-16 border-b border-slate-200 bg-white/95 backdrop-blur px-8 flex items-center justify-between z-20 shrink-0 shadow-xs">
-          <div className="flex items-center gap-4">
-            <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 shadow-xs">
-              <Compass className="w-5 h-5" />
+        <div className="min-h-14 py-2 border-b border-slate-200 bg-white px-4 flex flex-wrap items-center justify-between gap-3 z-20 shrink-0 shadow-2xs select-none">
+          {/* Left Title & Status */}
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 shadow-2xs shrink-0">
+              <Compass className="w-4 h-4" />
             </div>
             <div>
-              <div className="flex items-center gap-2.5">
-                <span className="font-bold text-sm text-slate-900 tracking-tight">
-                  Upper Assam Basin Proximity Map
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-xs text-slate-900 tracking-tight">
+                  Upper Assam Basin Proximity
                 </span>
-                <span className="px-2 py-0.5 text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full">
-                  PostGIS Live (3.85ms)
+                <span className="px-1.5 py-0.2 text-[9px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">
+                  PostGIS (3.85ms)
                 </span>
               </div>
-              <span className="text-xs text-slate-500">
-                Active Rig: <strong className="text-amber-600 font-mono font-bold">{activeWellId}</strong> • Field: <span className="font-medium text-slate-700">Dikom</span>
-              </span>
+              <div className="text-[11px] text-slate-500 flex items-center gap-1.5">
+                <span>Active: <strong className="text-amber-700 font-mono font-bold">{activeWellId}</strong></span>
+                <span>•</span>
+                <span>Field: <strong className="text-slate-700 font-medium">Dikom</strong></span>
+              </div>
             </div>
           </div>
 
           {/* Center Field Viewport Selector */}
-          <div className="flex items-center gap-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200 text-xs">
-            <span className="text-[11px] text-slate-400 uppercase font-bold px-2">Focus:</span>
+          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs">
+            <span className="text-[10px] text-slate-400 uppercase font-bold px-1.5 hidden sm:inline">Focus:</span>
             {[
-              { id: "ALL", label: "All Basin (60)" },
-              { id: "DIKOM", label: "Dikom (Active)" },
+              { id: "ALL", label: "All Basin" },
+              { id: "DIKOM", label: "Dikom" },
               { id: "NAHORKATIYA", label: "Nahorkatiya" },
               { id: "MORAN", label: "Moran" }
             ].map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setFieldView(tab.id)}
-                className={"px-3 py-1.5 rounded-lg text-xs font-semibold transition-all " +
+                className={"px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all " +
                   (fieldView === tab.id 
-                    ? "bg-white text-slate-900 shadow-xs border border-slate-200/80 font-bold" 
-                    : "text-slate-500 hover:text-slate-900 hover:bg-white/60")}
+                    ? "bg-white text-slate-900 shadow-2xs border border-slate-200 font-bold" 
+                    : "text-slate-500 hover:text-slate-900")}
               >
                 {tab.label}
               </button>
@@ -136,11 +139,11 @@ export default function WellMap() {
           </div>
 
           {/* Right Controls: Radius & Trajectory */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2.5">
             {/* Radius Slider Card */}
-            <div className="flex items-center gap-2.5 bg-white px-3.5 py-1.5 rounded-xl border border-slate-200 shadow-xs">
-              <Sliders className="w-3.5 h-3.5 text-slate-400" />
-              <span className="text-xs text-slate-600 font-medium">Radius:</span>
+            <div className="flex items-center gap-2 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200">
+              <Sliders className="w-3 h-3 text-slate-400" />
+              <span className="text-[11px] text-slate-500 font-medium">Radius:</span>
               <input
                 type="range"
                 min="5"
@@ -148,24 +151,25 @@ export default function WellMap() {
                 step="1"
                 value={radiusKm}
                 onChange={(e) => setRadiusKm(Number(e.target.value))}
-                className="w-20 accent-amber-500 cursor-pointer h-1.5 bg-slate-200 rounded-lg"
+                className="w-16 accent-amber-500 cursor-pointer h-1.5 bg-slate-200 rounded-lg"
               />
-              <span className="text-xs font-mono text-amber-700 font-bold w-12">{radiusKm} km</span>
+              <span className="text-[11px] font-mono text-amber-700 font-bold w-10">{radiusKm} km</span>
             </div>
 
             {/* 3D Directional Toggle */}
             <button
               onClick={() => setShowDirectional(!showDirectional)}
-              className={"px-3.5 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-2 shadow-xs " +
+              className={"px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition-all flex items-center gap-1.5 " +
                 (showDirectional
                   ? "bg-blue-50 text-blue-700 border-blue-200"
                   : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50")}
             >
-              <RotateCcw className="w-3.5 h-3.5" />
-              <span>3D Trajectory {showDirectional ? "ON" : "OFF"}</span>
+              <RotateCcw className="w-3 h-3" />
+              <span>3D {showDirectional ? "ON" : "OFF"}</span>
             </button>
           </div>
         </div>
+
 
         {/* Full-Bleed Map Canvas - Light Theme */}
         <div className="flex-1 relative w-full h-full bg-[#f8fafc] overflow-hidden select-none">
@@ -451,8 +455,9 @@ export default function WellMap() {
       </div>
 
       {/* Right Drawer: Well Profile & Offset Dossier - Clean Light Surface */}
-      <div className="w-96 flex flex-col bg-white border-l border-slate-200 overflow-y-auto shrink-0 select-text shadow-sm">
-        <div className="p-5 border-b border-slate-100 flex items-center justify-between">
+      <div className="w-80 flex flex-col bg-white border-l border-slate-200 overflow-y-auto shrink-0 select-text shadow-sm">
+        <div className="p-4 border-b border-slate-100 flex items-center justify-between">
+
           <div className="flex items-center gap-2.5">
             <Layers className="w-4 h-4 text-amber-600" />
             <h2 className="text-xs font-bold text-slate-900 uppercase tracking-wider">

@@ -34,7 +34,7 @@ import OffsetBrief from "./pages/OffsetBrief";
 export default function App() {
   const { activeTab, setActiveTab } = useWellStore();
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(280);
+  const [sidebarWidth, setSidebarWidth] = useState(250);
   const [isDragging, setIsDragging] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
 
@@ -70,7 +70,7 @@ export default function App() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!isDragging) return;
-      const newWidth = Math.max(260, Math.min(440, e.clientX));
+      const newWidth = Math.max(220, Math.min(380, e.clientX));
       setSidebarWidth(newWidth);
     };
 
@@ -96,40 +96,64 @@ export default function App() {
     };
   }, [isDragging]);
 
-  const currentWidth = isCollapsed ? 76 : Math.max(260, sidebarWidth);
+  const currentWidth = isCollapsed ? 68 : Math.max(240, sidebarWidth);
 
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-slate-50 text-slate-900 font-sans antialiased">
-      {/* Official Government of India & Ministry Top Banner */}
-      <header className="h-9 bg-[#0b1736] text-white px-5 flex items-center justify-between text-[11px] font-medium z-30 shrink-0 border-b border-amber-500/40 select-none shadow-xs overflow-hidden">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2.5 text-slate-300">
-            <span className="bg-white px-1.5 py-0.5 rounded shadow-2xs flex items-center h-5">
-              <img 
-                src="/oil-india-icon-transparent.png" 
-                alt="OIL" 
-                style={{ height: "14px", maxHeight: "14px", width: "auto" }}
-                className="object-contain" 
-              />
+      {/* Unified Professional Top Enterprise Navigation Bar (Zero Stacking) */}
+      <header className="h-14 bg-white border-b border-slate-200 px-4 flex items-center justify-between z-30 shrink-0 shadow-xs select-none overflow-hidden">
+        {/* Left: Brand Identity & Official Oil India Limited Logo */}
+        <div className="flex items-center gap-3 min-w-0">
+          <button
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition shrink-0"
+            title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+          >
+            {isCollapsed ? <PanelLeft className="w-5 h-5 text-amber-600" /> : <PanelLeftClose className="w-5 h-5 text-slate-600" />}
+          </button>
+
+          {/* Official Oil India Limited Logo - Clean & Bounded */}
+          <div className="flex items-center shrink-0">
+            <img 
+              src="/oil-india-logo-clean.png" 
+              alt="Oil India Limited" 
+              style={{ height: "34px", maxHeight: "34px", width: "auto" }}
+              className="object-contain" 
+            />
+          </div>
+
+          <div className="h-6 w-px bg-slate-200 mx-1 hidden sm:block shrink-0" />
+
+          {/* Platform Title & Ministry Attribution */}
+          <div className="hidden md:flex flex-col min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="font-extrabold text-[13px] text-[#0f265c] tracking-tight truncate">
+                NWIS <span className="font-normal text-slate-300">|</span> Nearby Wells Intelligence System
+              </span>
+              <span className="text-[10px] font-bold text-amber-800 bg-amber-100/80 px-2 py-0.5 rounded-md border border-amber-200/80 shrink-0">
+                v2.5 eRTMAC
+              </span>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium truncate">
+              पेट्रोलियम और प्राकृतिक गैस मंत्रालय • Ministry of Petroleum & Natural Gas, Govt. of India
             </span>
-            <span className="font-semibold text-white tracking-wide">भारत सरकार / Government of India</span>
-            <span className="text-slate-500">•</span>
-            <span className="text-slate-300">पेट्रोलियम और प्राकृतिक गैस मंत्रालय / Ministry of Petroleum & Natural Gas</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 text-[10px] text-slate-300 font-mono">
-            <Radio className="w-3 h-3 text-emerald-400 animate-pulse" />
-            <span>eRTMAC Duliajan Headquarters</span>
+        {/* Right: Telemetry Status, Official Classification & Live Clock */}
+        <div className="flex items-center gap-2.5 shrink-0">
+          <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="hidden xl:inline text-slate-500 text-[10px]">eRTMAC:</span>
+            <span className="font-mono text-emerald-800 font-bold text-[10px]">CONNECTED</span>
           </div>
-          <span className="text-slate-600">|</span>
-          <div className="flex items-center gap-1.5 font-mono text-[10px] text-amber-300 font-bold bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/40">
-            <Shield className="w-3 h-3" />
-            <span>RESTRICTED / OFFICIAL USE ONLY</span>
+
+          <div className="hidden lg:flex items-center gap-1.5 text-[10px] font-bold font-mono text-amber-900 bg-amber-50 px-2 py-1 rounded-lg border border-amber-200/80">
+            <Shield className="w-3 h-3 text-amber-600" />
+            <span>OFFICIAL USE ONLY</span>
           </div>
-          <span className="text-slate-600">|</span>
-          <div className="flex items-center gap-1.5 font-mono text-slate-300 text-[10px]">
+
+          <div className="flex items-center gap-1.5 text-slate-600 font-mono text-[11px] bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200/80">
             <Clock className="w-3 h-3 text-slate-400" />
             <span>{currentTime || "LIVE IST"}</span>
           </div>
@@ -141,7 +165,7 @@ export default function App() {
         {/* Sidebar Navigation - Collapsible & Draggable */}
         <aside 
           style={{ width: `${currentWidth}px` }}
-          className={`flex flex-col border-r border-slate-200 bg-white select-none z-20 shrink-0 shadow-sm relative transition-[width] ${
+          className={`flex flex-col border-r border-slate-200 bg-white select-none z-20 shrink-0 shadow-xs relative transition-[width] ${
             isDragging ? "transition-none" : "duration-200 ease-in-out"
           }`}
         >
@@ -152,56 +176,23 @@ export default function App() {
               className="absolute top-0 right-0 w-2 h-full cursor-col-resize hover:bg-amber-400/80 transition-colors z-30 flex items-center justify-center group"
               title="Drag left/right to resize sidebar"
             >
-              <div className="w-0.5 h-12 bg-slate-300 rounded-full group-hover:bg-amber-600 transition-colors" />
+              <div className="w-0.5 h-10 bg-slate-300 rounded-full group-hover:bg-amber-600 transition-colors" />
             </div>
           )}
 
-          {/* Official Brand Header */}
-          <div className="px-4 py-2.5 border-b border-slate-200/90 flex items-center justify-between bg-white h-16 shrink-0 overflow-hidden">
-            {!isCollapsed ? (
-              <div className="flex-1 flex items-center pr-2 overflow-hidden min-w-0">
-                <OilIndiaLogo height={38} showText={true} />
-              </div>
-            ) : (
-              <div className="mx-auto flex items-center justify-center">
-                <OilIndiaLogo height={32} showText={false} />
-              </div>
-            )}
-
-            {/* Toggle Close / Open Button */}
-            {!isCollapsed ? (
-              <button
-                onClick={() => setIsCollapsed(true)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition shadow-2xs shrink-0 ml-1"
-                title="Collapse Sidebar"
-              >
-                <PanelLeftClose className="w-4 h-4" />
-              </button>
-            ) : (
-              <button
-                onClick={() => setIsCollapsed(false)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition shadow-2xs mx-auto mt-2"
-                title="Expand Sidebar"
-              >
-                <PanelLeft className="w-4 h-4" />
-              </button>
-            )}
-          </div>
-
-
-
-          {/* Subsurface System Badge */}
+          {/* Sidebar Section Sub-header */}
           {!isCollapsed && (
-            <div className="px-4 py-2 border-b border-slate-100 bg-[#0f265c]/5 flex items-center justify-between text-[11px]">
-              <span className="font-bold text-[#0f265c] font-mono tracking-tight">NWIS PLATFORM v2.5</span>
-              <span className="text-[10px] text-amber-800 font-semibold bg-amber-100/80 px-2 py-0.2 rounded-full border border-amber-200">
-                eRTMAC Subsurface
+            <div className="px-4 py-2.5 border-b border-slate-100 bg-slate-50/70 flex items-center justify-between text-[11px]">
+              <span className="font-bold text-slate-600 uppercase tracking-wider text-[10px]">Portal Modules</span>
+              <span className="text-[10px] text-amber-800 font-bold font-mono bg-amber-100/80 px-1.5 py-0.2 rounded border border-amber-200">
+                10 Systems
               </span>
             </div>
           )}
 
           {/* Navigation Items with Generous Padding & Spacing */}
-          <nav className="flex-1 p-3 space-y-1.5 overflow-y-auto">
+          <nav className="flex-1 p-2 space-y-1 overflow-y-auto">
+
             {navItems.map((item) => {
               const Icon = item.icon;
               const active = activeTab === item.id;
