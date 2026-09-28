@@ -25,3 +25,8 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db
+
+# Internal scripts & private notes
+docs/*SCRIPT*.md
+docs/*script*.md
+
