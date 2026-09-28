@@ -103,7 +103,10 @@ export default function App() {
       {/* Official Government of India & Ministry Top Banner */}
       <header className="h-9 bg-[#0b1736] text-white px-5 flex items-center justify-between text-[11px] font-medium z-30 shrink-0 border-b border-amber-500/40 select-none shadow-xs">
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 text-slate-300">
+          <div className="flex items-center gap-2.5 text-slate-300">
+            <span className="bg-white px-1.5 py-0.5 rounded shadow-2xs flex items-center">
+              <img src="/oil-india-icon.png" alt="OIL" className="h-4.5 w-auto object-contain" />
+            </span>
             <span className="font-semibold text-white tracking-wide">भारत सरकार / Government of India</span>
             <span className="text-slate-500">•</span>
             <span className="text-slate-300">पेट्रोलियम और प्राकृतिक गैस मंत्रालय / Ministry of Petroleum & Natural Gas</span>
@@ -149,14 +152,14 @@ export default function App() {
           )}
 
           {/* Official Brand Header */}
-          <div className="p-4 border-b border-slate-100 flex items-center justify-between min-h-[76px] bg-slate-50/50">
+          <div className="p-3.5 border-b border-slate-200/90 flex items-center justify-between bg-white min-h-[84px]">
             {!isCollapsed ? (
-              <div className="flex items-center gap-3 overflow-hidden">
-                <OilIndiaLogo size={42} showText={true} />
+              <div className="flex-1 flex items-center pr-2 overflow-hidden">
+                <OilIndiaLogo height={66} showText={true} />
               </div>
             ) : (
-              <div className="mx-auto">
-                <OilIndiaLogo size={38} showText={false} />
+              <div className="mx-auto py-1">
+                <OilIndiaLogo height={46} showText={false} />
               </div>
             )}
 
@@ -179,6 +182,7 @@ export default function App() {
               </button>
             )}
           </div>
+
 
           {/* Subsurface System Badge */}
           {!isCollapsed && (
