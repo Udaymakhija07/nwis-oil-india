@@ -34,7 +34,7 @@ import OffsetBrief from "./pages/OffsetBrief";
 export default function App() {
   const { activeTab, setActiveTab } = useWellStore();
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(295);
+  const [sidebarWidth, setSidebarWidth] = useState(280);
   const [isDragging, setIsDragging] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
 
@@ -70,7 +70,7 @@ export default function App() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!isDragging) return;
-      const newWidth = Math.max(240, Math.min(440, e.clientX));
+      const newWidth = Math.max(260, Math.min(440, e.clientX));
       setSidebarWidth(newWidth);
     };
 
@@ -96,16 +96,21 @@ export default function App() {
     };
   }, [isDragging]);
 
-  const currentWidth = isCollapsed ? 76 : sidebarWidth;
+  const currentWidth = isCollapsed ? 76 : Math.max(260, sidebarWidth);
 
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-slate-50 text-slate-900 font-sans antialiased">
       {/* Official Government of India & Ministry Top Banner */}
-      <header className="h-9 bg-[#0b1736] text-white px-5 flex items-center justify-between text-[11px] font-medium z-30 shrink-0 border-b border-amber-500/40 select-none shadow-xs">
+      <header className="h-9 bg-[#0b1736] text-white px-5 flex items-center justify-between text-[11px] font-medium z-30 shrink-0 border-b border-amber-500/40 select-none shadow-xs overflow-hidden">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2.5 text-slate-300">
-            <span className="bg-white px-1.5 py-0.5 rounded shadow-2xs flex items-center">
-              <img src="/oil-india-icon.png" alt="OIL" className="h-4.5 w-auto object-contain" />
+            <span className="bg-white px-1.5 py-0.5 rounded shadow-2xs flex items-center h-5">
+              <img 
+                src="/oil-india-icon-transparent.png" 
+                alt="OIL" 
+                style={{ height: "14px", maxHeight: "14px", width: "auto" }}
+                className="object-contain" 
+              />
             </span>
             <span className="font-semibold text-white tracking-wide">भारत सरकार / Government of India</span>
             <span className="text-slate-500">•</span>
@@ -152,14 +157,14 @@ export default function App() {
           )}
 
           {/* Official Brand Header */}
-          <div className="p-3.5 border-b border-slate-200/90 flex items-center justify-between bg-white min-h-[84px]">
+          <div className="px-4 py-2.5 border-b border-slate-200/90 flex items-center justify-between bg-white h-16 shrink-0 overflow-hidden">
             {!isCollapsed ? (
-              <div className="flex-1 flex items-center pr-2 overflow-hidden">
-                <OilIndiaLogo height={66} showText={true} />
+              <div className="flex-1 flex items-center pr-2 overflow-hidden min-w-0">
+                <OilIndiaLogo height={38} showText={true} />
               </div>
             ) : (
-              <div className="mx-auto py-1">
-                <OilIndiaLogo height={46} showText={false} />
+              <div className="mx-auto flex items-center justify-center">
+                <OilIndiaLogo height={32} showText={false} />
               </div>
             )}
 
@@ -167,7 +172,7 @@ export default function App() {
             {!isCollapsed ? (
               <button
                 onClick={() => setIsCollapsed(true)}
-                className="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition shadow-2xs shrink-0"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition shadow-2xs shrink-0 ml-1"
                 title="Collapse Sidebar"
               >
                 <PanelLeftClose className="w-4 h-4" />
@@ -175,13 +180,14 @@ export default function App() {
             ) : (
               <button
                 onClick={() => setIsCollapsed(false)}
-                className="p-1.5 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition shadow-2xs mx-auto mt-2"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition shadow-2xs mx-auto mt-2"
                 title="Expand Sidebar"
               >
                 <PanelLeft className="w-4 h-4" />
               </button>
             )}
           </div>
+
 
 
           {/* Subsurface System Badge */}
