@@ -70,3 +70,15 @@ def get_evaluation_metrics():
         'total_documents_indexed': 47,
         'review_queue_backlog': 0
     }
+
+
+class ExtractRequest(BaseModel):
+    text: str
+    doc_id: Optional[str] = "WCR-TEST-01"
+    well_id: Optional[str] = "DIK-09"
+    page: Optional[int] = 1
+
+@app.post("/api/ai/extract")
+def extract_endpoint(req: ExtractRequest):
+    events = extract_events_from_text(req.text, doc_id=req.doc_id, well_id=req.well_id, page=req.page)
+    return {"status": "success", "events": events, "count": len(events)}
