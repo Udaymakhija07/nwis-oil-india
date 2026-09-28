@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="favFlame" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="60%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <linearGradient id="favShield" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#favShield)"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.6"/>
+  <path d="M22 52 L28 20 L36 20 L42 52 Z" fill="none" stroke="#e2e8f0" stroke-width="2.2" stroke-linejoin="round"/>
+  <line x1="25" y1="36" x2="39" y2="36" stroke="#94a3b8" stroke-width="1.8"/>
+  <line x1="27" y1="28" x2="37" y2="28" stroke="#94a3b8" stroke-width="1.8"/>
+  <line x1="24" y1="44" x2="40" y2="44" stroke="#94a3b8" stroke-width="1.8"/>
+  <line x1="25" y1="36" x2="37" y2="28" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="39" y1="36" x2="27" y2="28" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="24" y1="44" x2="39" y2="36" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="40" y1="44" x2="25" y2="36" stroke="#64748b" stroke-width="1.2"/>
+  <path d="M32 9 C32 9 37 13 37 17 C37 20 34.5 22 32 22 C29.5 22 27 20 27 17 C27 13 32 9 32 9 Z" fill="url(#favFlame)"/>
+  <circle cx="32" cy="18" r="2.2" fill="#ffffff" opacity="0.9"/>
+  <path d="M16 52 Q32 58 48 52" stroke="#10b981" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>
