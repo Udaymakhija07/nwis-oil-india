@@ -656,7 +656,7 @@ Drillstring freed after 21 hours. Maintained high shear rate and restricted stat
                 className="px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-slate-950 text-xs font-bold transition-all shadow-xs flex items-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
-                <span>{isExtracting ? "Extracting Entities..." : "Run Document AI Extraction"}</span>
+                <span>{isExtracting ? "Extracting Geohazard Entities..." : "Extract Geohazard Entities"}</span>
               </button>
             </div>
           </div>
