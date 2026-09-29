@@ -153,11 +153,6 @@ export default function App() {
             <span className="font-mono text-emerald-800 font-bold text-[10px]">{t("ertmacConnected")}</span>
           </div>
 
-          <div className="hidden lg:flex items-center gap-1.5 text-[10px] font-bold font-mono text-amber-900 bg-amber-50 px-2 py-1 rounded-lg border border-amber-200/80">
-            <Shield className="w-3 h-3 text-amber-600" />
-            <span>{t("officialUse")}</span>
-          </div>
-
           <div className="hidden md:flex items-center gap-1.5 text-slate-600 font-mono text-[11px] bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200/80">
             <Clock className="w-3 h-3 text-slate-400" />
             <span>{currentTime || "LIVE IST"}</span>
