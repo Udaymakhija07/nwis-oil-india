@@ -7,7 +7,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const seedPath = path.resolve(__dirname, "../../../data-gen/seed_data.json");
+const localSeedPath = path.resolve(__dirname, "seed_data.json");
+const rootSeedPath = path.resolve(__dirname, "../../../data-gen/seed_data.json");
+const seedPath = fs.existsSync(localSeedPath) ? localSeedPath : rootSeedPath;
 
 let memoryDb = null;
 if (fs.existsSync(seedPath)) {

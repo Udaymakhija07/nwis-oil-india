@@ -6,9 +6,11 @@ const router = Router();
 router.post("/ask", async (req, res) => {
   const { question = "", active_well_id = "DIK-14", radius_km = 10.0 } = req.body;
 
-  // Try calling Python AI service
+  // Try calling Python AI service (via Vercel service binding or local fallback)
   try {
-    const aiRes = await fetch("http://localhost:8000/api/copilot/ask", {
+    const aiServiceUrl = process.env.AI_SERVICE_URL || "http://localhost:8000";
+    const targetUrl = new URL("/api/copilot/ask", aiServiceUrl);
+    const aiRes = await fetch(targetUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question, active_well_id, radius_km })

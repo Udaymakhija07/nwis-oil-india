@@ -5,9 +5,11 @@ const router = Router();
 router.post("/predict", async (req, res) => {
   const { active_depth_md = 2268.0, current_params, aligned_offsets } = req.body;
 
-  // Try calling Python AI service
+  // Try calling Python AI service (via Vercel service binding or local fallback)
   try {
-    const aiRes = await fetch("http://localhost:8000/api/ml/predict", {
+    const aiServiceUrl = process.env.AI_SERVICE_URL || "http://localhost:8000";
+    const targetUrl = new URL("/api/ml/predict", aiServiceUrl);
+    const aiRes = await fetch(targetUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ active_depth_md, current_params, aligned_offsets })

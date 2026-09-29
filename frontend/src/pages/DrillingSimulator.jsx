@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { useWellStore } from "../store/useWellStore";
 import { useTranslation } from "../i18n/translations";
+import { BASE_URL } from "../api/client";
 
 export default function DrillingSimulator() {
   const { setActiveTab } = useWellStore();
@@ -80,7 +81,7 @@ export default function DrillingSimulator() {
   useEffect(() => {
     async function fetchState() {
       try {
-        const res = await fetch("http://localhost:5050/api/simulator/state");
+        const res = await fetch(`${BASE_URL}/simulator/state`);
         if (res.ok) {
           const data = await res.json();
           setCurrentMd(data.current_depth_md);
@@ -101,7 +102,7 @@ export default function DrillingSimulator() {
       interval = setInterval(async () => {
         let synced = false;
         try {
-          const res = await fetch("http://localhost:5050/api/simulator/step", { method: "POST" });
+          const res = await fetch(`${BASE_URL}/simulator/step`, { method: "POST" });
           if (res.ok) {
             const data = await res.json();
             setCurrentMd(data.current_depth_md);
@@ -126,17 +127,17 @@ export default function DrillingSimulator() {
 
   const handlePlayPause = async () => {
     if (isPlaying) {
-      try { await fetch("http://localhost:5050/api/simulator/pause", { method: "POST" }); } catch (e) {}
+      try { await fetch(`${BASE_URL}/simulator/pause`, { method: "POST" }); } catch (e) {}
       setIsPlaying(false);
     } else {
-      try { await fetch("http://localhost:5050/api/simulator/play", { method: "POST" }); } catch (e) {}
+      try { await fetch(`${BASE_URL}/simulator/play`, { method: "POST" }); } catch (e) {}
       setIsPlaying(true);
     }
   };
 
   const handleReset = async () => {
     try {
-      const res = await fetch("http://localhost:5050/api/simulator/reset", { method: "POST" });
+      const res = await fetch(`${BASE_URL}/simulator/reset`, { method: "POST" });
       if (res.ok) {
         const data = await res.json();
         setCurrentMd(data.current_depth_md);
@@ -167,7 +168,7 @@ export default function DrillingSimulator() {
 
   const handleStep = async () => {
     try {
-      const res = await fetch("http://localhost:5050/api/simulator/step", { method: "POST" });
+      const res = await fetch(`${BASE_URL}/simulator/step`, { method: "POST" });
       if (res.ok) {
         const data = await res.json();
         setCurrentMd(data.current_depth_md);
@@ -184,7 +185,7 @@ export default function DrillingSimulator() {
     setActionFeedback(actionText);
     if (activeAlert) {
       try {
-        fetch(`http://localhost:5050/api/simulator/alerts/${activeAlert.alert_id}/feedback`, {
+        fetch(`${BASE_URL}/simulator/alerts/${activeAlert.alert_id}/feedback`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ useful: true, action_taken: actionText })

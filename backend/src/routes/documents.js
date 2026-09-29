@@ -4,7 +4,9 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const gtPath = path.resolve(__dirname, "../../../data-gen/ground_truth.json");
+const localGtPath = path.resolve(__dirname, "../db/ground_truth.json");
+const rootGtPath = path.resolve(__dirname, "../../../data-gen/ground_truth.json");
+const gtPath = fs.existsSync(localGtPath) ? localGtPath : rootGtPath;
 
 const router = Router();
 
@@ -38,9 +40,11 @@ router.get("/:id", (req, res) => {
 router.post("/extract", async (req, res) => {
   const { text = "", doc_id = "WCR-LIVE-DEMO", well_id = "LIVE-TEST", page = 1 } = req.body;
 
-  // 1. Try forwarding to Python FastAPI microservice if running on port 8000
+  // 1. Try forwarding to Python FastAPI microservice (via Vercel service binding or local fallback)
   try {
-    const aiRes = await fetch("http://localhost:8000/api/ai/extract", {
+    const aiServiceUrl = process.env.AI_SERVICE_URL || "http://localhost:8000";
+    const targetUrl = new URL("/api/ai/extract", aiServiceUrl);
+    const aiRes = await fetch(targetUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text, doc_id, well_id, page })

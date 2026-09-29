@@ -68,17 +68,22 @@ app.get("/api/docs", (req, res) => {
   });
 });
 
-// Mount Routes
-app.use("/api/auth", authRouter);
-app.use("/api/wells", authenticate, wellsRouter);
-app.use("/api/events", authenticate, eventsRouter);
-app.use("/api/formations", authenticate, formationsRouter);
-app.use("/api/documents", authenticate, documentsRouter);
-app.use("/api/ai", authenticate, documentsRouter);
-app.use("/api/correlation", authenticate, correlationRouter);
-app.use("/api/copilot", authenticate, copilotRouter);
-app.use("/api/ml", authenticate, mlRouter);
-app.use("/api/simulator", authenticate, simulatorRouter);
+// Mount Routes (supporting both /api/* and /* for Vercel service rewrites)
+const mountRoute = (path, ...handlers) => {
+  app.use(`/api${path}`, ...handlers);
+  app.use(path, ...handlers);
+};
+
+mountRoute("/auth", authRouter);
+mountRoute("/wells", authenticate, wellsRouter);
+mountRoute("/events", authenticate, eventsRouter);
+mountRoute("/formations", authenticate, formationsRouter);
+mountRoute("/documents", authenticate, documentsRouter);
+mountRoute("/ai", authenticate, documentsRouter);
+mountRoute("/correlation", authenticate, correlationRouter);
+mountRoute("/copilot", authenticate, copilotRouter);
+mountRoute("/ml", authenticate, mlRouter);
+mountRoute("/simulator", authenticate, simulatorRouter);
 
 // Real-time eRTMAC WebSocket stream
 simulatorService.setSocketIO(io);
@@ -95,4 +100,5 @@ server.listen(PORT, () => {
   console.log(`[NWIS Backend] Server running on http://localhost:${PORT}`);
 });
 
+export default app;
 export { app, server, io };

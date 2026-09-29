@@ -4,7 +4,9 @@ import math
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
-seed_path = ROOT / "data-gen/seed_data.json"
+local_seed = pathlib.Path(__file__).resolve().parent.parent / "seed_data.json"
+root_seed = ROOT / "data-gen/seed_data.json"
+seed_path = local_seed if local_seed.exists() else root_seed
 
 docs_index = []
 if seed_path.exists():

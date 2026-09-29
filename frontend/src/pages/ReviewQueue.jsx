@@ -456,6 +456,8 @@ Drillstring freed after 21 hours. Maintained high shear rate and restricted stat
     // 1. Try backend API on 5050 and 8000
     try {
       const endpoints = [
+        "/api/documents/extract",
+        "/api/ai/extract",
         "http://localhost:5050/api/documents/extract",
         "http://localhost:5050/api/ai/extract",
         "http://localhost:8000/api/ai/extract"

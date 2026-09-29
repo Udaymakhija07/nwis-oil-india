@@ -1,0 +1,848 @@
+[
+  {
+    "doc_id": "WCR_DIK-01_FINAL_P19.pdf",
+    "well_id": "DIK-01",
+    "page": 19,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 3024.29,
+      "md_to": 3062.48,
+      "formation": "Surma Group",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 7.9,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-01_FINAL_P32.pdf",
+    "well_id": "DIK-01",
+    "page": 32,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3452.29,
+      "md_to": 3487.4,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 23.2,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-02_FINAL_P35.pdf",
+    "well_id": "DIK-02",
+    "page": 35,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3466.79,
+      "md_to": 3495.4,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 27.3,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-04_FINAL_P24.pdf",
+    "well_id": "DIK-04",
+    "page": 24,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2207.63,
+      "md_to": 2229.04,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 47.0,
+      "npt_hours": 13.1,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-07_FINAL_P12.pdf",
+    "well_id": "DIK-07",
+    "page": 12,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3646.27,
+      "md_to": 3666.97,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 12.7,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-07_FINAL_P15.pdf",
+    "well_id": "DIK-07",
+    "page": 15,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 4008.32,
+      "md_to": 4033.23,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 12.4,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-08_FINAL_P12.pdf",
+    "well_id": "DIK-08",
+    "page": 12,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2377.74,
+      "md_to": 2407.57,
+      "formation": "Tipam Sandstone",
+      "severity": "WARNING",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 37.0,
+      "npt_hours": 6.3,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-10_FINAL_P17.pdf",
+    "well_id": "DIK-10",
+    "page": 17,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 3946.03,
+      "md_to": 3983.47,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 9.6,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-16_FINAL_P33.pdf",
+    "well_id": "DIK-16",
+    "page": 33,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 1565.26,
+      "md_to": 1601.42,
+      "formation": "Girujan Clay",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 7.1,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-16_FINAL_P32.pdf",
+    "well_id": "DIK-16",
+    "page": 32,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 4031.59,
+      "md_to": 4047.05,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 10.0,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-17_FINAL_P26.pdf",
+    "well_id": "DIK-17",
+    "page": 26,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2343.4,
+      "md_to": 2372.19,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 64.0,
+      "npt_hours": 5.1,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-19_FINAL_P30.pdf",
+    "well_id": "DIK-19",
+    "page": 30,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2185.38,
+      "md_to": 2220.49,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 66.0,
+      "npt_hours": 13.5,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-19_FINAL_P23.pdf",
+    "well_id": "DIK-19",
+    "page": 23,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 3913.89,
+      "md_to": 3942.19,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 21.3,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-21_FINAL_P23.pdf",
+    "well_id": "DIK-21",
+    "page": 23,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3464.13,
+      "md_to": 3481.93,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 13.5,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-22_FINAL_P36.pdf",
+    "well_id": "DIK-22",
+    "page": 36,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2132.18,
+      "md_to": 2157.41,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 45.0,
+      "npt_hours": 7.8,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-23_FINAL_P34.pdf",
+    "well_id": "DIK-23",
+    "page": 34,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 2803.09,
+      "md_to": 2842.13,
+      "formation": "Surma Group",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 6.1,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_DIK-23_FINAL_P17.pdf",
+    "well_id": "DIK-23",
+    "page": 17,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 4098.23,
+      "md_to": 4135.6,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 11.1,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-02_FINAL_P31.pdf",
+    "well_id": "NHK-02",
+    "page": 31,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2232.72,
+      "md_to": 2266.4,
+      "formation": "Tipam Sandstone",
+      "severity": "WARNING",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 26.0,
+      "npt_hours": 6.0,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-03_FINAL_P37.pdf",
+    "well_id": "NHK-03",
+    "page": 37,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2190.76,
+      "md_to": 2229.19,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 63.0,
+      "npt_hours": 8.0,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-06_FINAL_P22.pdf",
+    "well_id": "NHK-06",
+    "page": 22,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3262.97,
+      "md_to": 3291.16,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 19.7,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-08_FINAL_P18.pdf",
+    "well_id": "NHK-08",
+    "page": 18,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 4061.91,
+      "md_to": 4077.86,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 21.3,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-11_FINAL_P29.pdf",
+    "well_id": "NHK-11",
+    "page": 29,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 1907.51,
+      "md_to": 1927.11,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 60.0,
+      "npt_hours": 8.4,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-12_FINAL_P38.pdf",
+    "well_id": "NHK-12",
+    "page": 38,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3761.03,
+      "md_to": 3787.82,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 14.0,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-14_FINAL_P23.pdf",
+    "well_id": "NHK-14",
+    "page": 23,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 4192.94,
+      "md_to": 4222.02,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 19.8,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-14_FINAL_P16.pdf",
+    "well_id": "NHK-14",
+    "page": 16,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 4387.95,
+      "md_to": 4420.47,
+      "formation": "Jaintia Limestone",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 6.6,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-15_FINAL_P28.pdf",
+    "well_id": "NHK-15",
+    "page": 28,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2380.49,
+      "md_to": 2415.71,
+      "formation": "Tipam Sandstone",
+      "severity": "WARNING",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 33.0,
+      "npt_hours": 6.0,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-15_FINAL_P19.pdf",
+    "well_id": "NHK-15",
+    "page": 19,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3593.69,
+      "md_to": 3622.46,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 15.9,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-16_FINAL_P29.pdf",
+    "well_id": "NHK-16",
+    "page": 29,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 3765.03,
+      "md_to": 3809.81,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 14.9,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-17_FINAL_P23.pdf",
+    "well_id": "NHK-17",
+    "page": 23,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 1343.01,
+      "md_to": 1370.64,
+      "formation": "Girujan Clay",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 5.4,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-17_FINAL_P24.pdf",
+    "well_id": "NHK-17",
+    "page": 24,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 1928.24,
+      "md_to": 1952.38,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 47.0,
+      "npt_hours": 8.0,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-17_FINAL_P35.pdf",
+    "well_id": "NHK-17",
+    "page": 35,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 3961.61,
+      "md_to": 4005.55,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 21.6,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-18_FINAL_P30.pdf",
+    "well_id": "NHK-18",
+    "page": 30,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 3846.31,
+      "md_to": 3867.97,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 18.5,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-19_FINAL_P14.pdf",
+    "well_id": "NHK-19",
+    "page": 14,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 1189.19,
+      "md_to": 1212.54,
+      "formation": "Girujan Clay",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 6.5,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_NHK-19_FINAL_P22.pdf",
+    "well_id": "NHK-19",
+    "page": 22,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 1958.25,
+      "md_to": 1993.37,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 53.0,
+      "npt_hours": 9.7,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-01_FINAL_P30.pdf",
+    "well_id": "MOR-01",
+    "page": 30,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2367.76,
+      "md_to": 2407.61,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 65.0,
+      "npt_hours": 8.5,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-01_FINAL_P20.pdf",
+    "well_id": "MOR-01",
+    "page": 20,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 2963.26,
+      "md_to": 3001.33,
+      "formation": "Surma Group",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 5.0,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-02_FINAL_P32.pdf",
+    "well_id": "MOR-02",
+    "page": 32,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 1542.97,
+      "md_to": 1579.75,
+      "formation": "Girujan Clay",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 6.8,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-02_FINAL_P22.pdf",
+    "well_id": "MOR-02",
+    "page": 22,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2343.33,
+      "md_to": 2373.91,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 50.0,
+      "npt_hours": 5.1,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-02_FINAL_P36.pdf",
+    "well_id": "MOR-02",
+    "page": 36,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 3893.68,
+      "md_to": 3917.66,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 13.4,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-03_FINAL_P24.pdf",
+    "well_id": "MOR-03",
+    "page": 24,
+    "ground_truth_event": {
+      "type": "LOSS",
+      "md_from": 2501.04,
+      "md_to": 2516.4,
+      "formation": "Tipam Sandstone",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.32,
+      "volume_lost_m3": 45.0,
+      "npt_hours": 13.4,
+      "cause": "Natural micro-fractures in Tipam sands intersected under high ECD (> 1.34 sg)",
+      "mitigation": "Spotted 30 ppb coarse LCM pill (NutPlug + Mica). Reduced pump rate from 2400 to 2050 LPM. Reduced mud weight to 1.28 sg.",
+      "outcome": "Full circulation regained after 7.5 hours NPT. Drilling resumed with controlled ECD."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-03_FINAL_P37.pdf",
+    "well_id": "MOR-03",
+    "page": 37,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 2680.64,
+      "md_to": 2703.51,
+      "formation": "Surma Group",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 3.2,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-05_FINAL_P14.pdf",
+    "well_id": "MOR-05",
+    "page": 14,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 1335.72,
+      "md_to": 1359.19,
+      "formation": "Girujan Clay",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 7.2,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-07_FINAL_P14.pdf",
+    "well_id": "MOR-07",
+    "page": 14,
+    "ground_truth_event": {
+      "type": "STUCK",
+      "md_from": 3968.17,
+      "md_to": 3994.34,
+      "formation": "Kopili Shale",
+      "severity": "HIGH",
+      "mud_wt_sg": 1.3,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 16.8,
+      "cause": "Reactive Kopili shale sloughing and pack-off during wiper trip; overpull exceeded 140 klbs",
+      "mitigation": "Jarred downwards at 110 klbs overpull. Spotted 50 bbl glycol-based lubricant pill. Worked pipe with 35 RPM rotation.",
+      "outcome": "String freed after 11 hours. Conditioned mud with KCl-Polymer inhibitor."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-08_FINAL_P20.pdf",
+    "well_id": "MOR-08",
+    "page": 20,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3415.35,
+      "md_to": 3436.92,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 26.3,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-09_FINAL_P28.pdf",
+    "well_id": "MOR-09",
+    "page": 28,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 2647.98,
+      "md_to": 2684.12,
+      "formation": "Surma Group",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 3.7,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-11_FINAL_P13.pdf",
+    "well_id": "MOR-11",
+    "page": 13,
+    "ground_truth_event": {
+      "type": "TORQUE_DRAG",
+      "md_from": 1831.0,
+      "md_to": 1850.95,
+      "formation": "Girujan Clay",
+      "severity": "MEDIUM",
+      "mud_wt_sg": 1.25,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 7.4,
+      "cause": "Severe torque fluctuations (> 28 kN.m) due to hole cleaning deficit and dogleg severity in Girujan clays",
+      "mitigation": "Pumped high-viscosity tandem sweep. Back-reamed 12 stands with maximum flow rate.",
+      "outcome": "Torque stabilized back to 16 kN.m. Resumed drilling."
+    }
+  },
+  {
+    "doc_id": "WCR_MOR-14_FINAL_P26.pdf",
+    "well_id": "MOR-14",
+    "page": 26,
+    "ground_truth_event": {
+      "type": "KICK",
+      "md_from": 3540.79,
+      "md_to": 3561.81,
+      "formation": "Barail Coal-Shale",
+      "severity": "CRITICAL",
+      "mud_wt_sg": 1.38,
+      "volume_lost_m3": 0.0,
+      "npt_hours": 12.9,
+      "cause": "Encountered high-pressure gas sand stringer in Upper Barail; sudden D-exponent drop and pit gain of 2.4 m3",
+      "mitigation": "Shut-in on annular BOP. Recorded SIDPP=380 psi, SICP=520 psi. Circulated gas bubble via Wait & Weight method. Weighted up mud to 1.44 sg.",
+      "outcome": "Well killed safely after 16 hours. Resumed drilling with zero gas units."
+    }
+  }
+]
