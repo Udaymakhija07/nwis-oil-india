@@ -14,8 +14,10 @@ import {
 } from "lucide-react";
 import { fetchWells, fetchNearbyOffsets, fetchWellDetails } from "../api/client";
 import { useWellStore } from "../store/useWellStore";
+import { useTranslation } from "../i18n/translations";
 
 export default function WellMap() {
+  const { t } = useTranslation();
   const { activeWellId, radiusKm, setRadiusKm, selectedOffsetId, setSelectedOffsetId } = useWellStore();
   const [wells, setWells] = useState([]);
   const [offsets, setOffsets] = useState([]);
@@ -75,9 +77,10 @@ export default function WellMap() {
     return { x, y };
   };
 
-  const activePos = activeWell 
-    ? projectToSvg(activeWell.latitude, activeWell.longitude) 
-    : { x: SVG_WIDTH / 2, y: SVG_HEIGHT / 2 };
+  const activePos = projectToSvg(
+    activeWell?.latitude || 27.514024, 
+    activeWell?.longitude || 95.149027
+  );
 
   // In Assam (~27.5 deg N), 1 deg Lon ~= 98.8 km
   const lonSpanKm = (currentBounds.maxLon - currentBounds.minLon) * 98.8;
@@ -102,16 +105,16 @@ export default function WellMap() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-xs text-slate-900 tracking-tight">
-                  Upper Assam Basin Proximity
+                  {t("map_title")}
                 </span>
                 <span className="px-1.5 py-0.2 text-[9px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">
                   PostGIS (3.85ms)
                 </span>
               </div>
               <div className="text-[11px] text-slate-500 flex items-center gap-1.5">
-                <span>Active: <strong className="text-amber-700 font-mono font-bold">{activeWellId}</strong></span>
+                <span>{t("map_active_label")} <strong className="text-amber-700 font-mono font-bold">{activeWellId}</strong></span>
                 <span>•</span>
-                <span>Field: <strong className="text-slate-700 font-medium">Dikom</strong></span>
+                <span>{t("map_field_label")} <strong className="text-slate-700 font-medium">Dikom</strong></span>
               </div>
             </div>
           </div>
@@ -257,7 +260,7 @@ export default function WellMap() {
                   fontFamily="monospace"
                   fontWeight="bold"
                 >
-                  {radiusKm} km search radius
+                  {radiusKm} {t("map_search_radius")}
                 </text>
               </g>
             )}
@@ -316,12 +319,15 @@ export default function WellMap() {
                     />
                   )}
 
-                  {/* Pulsing ring for Active Well DIK-14 */}
+                  {/* Pulsing ring for Active Well DIK-14 (SVG native animate - zero drift) */}
                   {isActive && (
-                    <>
-                      <circle cx={x} cy={y} r="20" fill="none" stroke="#d97706" strokeWidth="1.5" className="animate-ping opacity-50" />
-                      <circle cx={x} cy={y} r="26" fill="none" stroke="#d97706" strokeWidth="0.8" opacity="0.3" />
-                    </>
+                    <g pointerEvents="none">
+                      <circle cx={x} cy={y} r="10" fill="none" stroke="#d97706" strokeWidth="2" opacity="0.8">
+                        <animate attributeName="r" from="10" to="24" dur="2s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="0.8" to="0" dur="2s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx={x} cy={y} r="16" fill="none" stroke="#d97706" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+                    </g>
                   )}
 
                   {/* Selected highlight halo */}
