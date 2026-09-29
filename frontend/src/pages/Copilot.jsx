@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Search, Send, Sparkles, FileText, CheckCircle2, ShieldAlert, AlertCircle, ExternalLink, FileCheck2 } from "lucide-react";
 import { useWellStore } from "../store/useWellStore";
+import { askCopilotQuery } from "../api/client";
 
 export default function Copilot() {
   const { activeWellId } = useWellStore();
@@ -53,14 +54,8 @@ export default function Copilot() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5050/api/copilot/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: query, active_well_id: activeWellId, radius_km: 10.0 })
-      });
-
-      if (res.ok) {
-        const data = await res.json();
+      const data = await askCopilotQuery(query, activeWellId);
+      if (data) {
         setMessages((prev) => [
           ...prev,
           {
@@ -73,13 +68,13 @@ export default function Copilot() {
       } else {
         setMessages((prev) => [
           ...prev,
-          { sender: "assistant", text: "Error communicating with NWIS Copilot service.", citations: [] }
+          { sender: "assistant", text: "No historical records matched your geological query.", citations: [] }
         ]);
       }
     } catch (err) {
       setMessages((prev) => [
         ...prev,
-        { sender: "assistant", text: "Backend service unreachable.", citations: [] }
+        { sender: "assistant", text: "Error communicating with NWIS Copilot service.", citations: [] }
       ]);
     }
     setLoading(false);

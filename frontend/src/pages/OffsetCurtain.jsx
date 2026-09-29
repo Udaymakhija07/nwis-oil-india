@@ -13,6 +13,7 @@ import {
   ArrowDown
 } from "lucide-react";
 import { useWellStore } from "../store/useWellStore";
+import { fetchCurtainData } from "../api/client";
 
 export default function OffsetCurtain() {
   const { activeWellId } = useWellStore();
@@ -26,15 +27,10 @@ export default function OffsetCurtain() {
   useEffect(() => {
     async function loadCurtain() {
       setLoading(true);
-      try {
-        const res = await fetch(
-          `http://localhost:5050/api/correlation/${activeWellId}?offsets=${selectedOffsets.join(",")}`
-        );
-        if (res.ok) {
-          const data = await res.json();
-          setCurtainData(data);
-        }
-      } catch (err) {}
+      const data = await fetchCurtainData(activeWellId, selectedOffsets);
+      if (data) {
+        setCurtainData(data);
+      }
       setLoading(false);
     }
     loadCurtain();

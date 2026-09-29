@@ -40,6 +40,43 @@ export default function DrillingSimulator() {
   const [activeAlert, setActiveAlert] = useState(null);
   const [actionFeedback, setActionFeedback] = useState(null);
 
+  const triggerLookAheadAlert = (depth) => {
+    if (depth >= 2268.0 && depth <= 2315.0) {
+      return {
+        alert_id: "ALT-SIM-2310",
+        type: "LOSS",
+        formation: "Tipam Sandstone",
+        lead_distance_m: Math.max(0, Math.round(2310.0 - depth)),
+        time_to_reach_hrs: Math.max(0.1, Math.round(((2310.0 - depth) / 16.0) * 10) / 10),
+        severity: "CRITICAL",
+        recommended_action: "Spot 30 ppb coarse LCM pill, cap ECD below 1.28 sg",
+        evidence: "Historical offset DIK-04 suffered total mud loss of 42.0 m³ at 2,310m MD in fractured Tipam sandstone."
+      };
+    }
+    return null;
+  };
+
+  const advanceSimulationStep = (prevMd) => {
+    const nextMd = Math.round((prevMd + 1.0) * 10) / 10;
+    const inLossZone = nextMd >= 2280.0;
+    const jitter = (Math.random() - 0.5) * 5;
+    
+    setTelemetry({
+      bit_depth_md: nextMd,
+      flow_in: Math.round(2400 + jitter),
+      flow_out: inLossZone ? Math.round(2140 + jitter) : Math.round(2380 + jitter),
+      ecd: inLossZone ? 1.33 : 1.30,
+      rop: inLossZone ? 6.2 : 14.5,
+      torque: Math.round((18.4 + (Math.random() - 0.5) * 0.8) * 10) / 10,
+      spp: Math.round(2410 + (Math.random() - 0.5) * 20),
+      pit_gain_loss: inLossZone ? -14.5 : 0.0
+    });
+
+    const alert = triggerLookAheadAlert(nextMd);
+    setActiveAlert(alert);
+    return nextMd;
+  };
+
   useEffect(() => {
     async function fetchState() {
       try {
@@ -49,8 +86,11 @@ export default function DrillingSimulator() {
           setCurrentMd(data.current_depth_md);
           if (data.telemetry) setTelemetry(data.telemetry);
           if (data.active_alert) setActiveAlert(data.active_alert);
+          return;
         }
       } catch (err) {}
+      // Fallback initial state
+      setActiveAlert(triggerLookAheadAlert(2268.0));
     }
     fetchState();
   }, []);
@@ -59,6 +99,7 @@ export default function DrillingSimulator() {
     let interval = null;
     if (isPlaying) {
       interval = setInterval(async () => {
+        let synced = false;
         try {
           const res = await fetch("http://localhost:5050/api/simulator/step", { method: "POST" });
           if (res.ok) {
@@ -66,11 +107,18 @@ export default function DrillingSimulator() {
             setCurrentMd(data.current_depth_md);
             if (data.telemetry) setTelemetry(data.telemetry);
             if (data.active_alert) setActiveAlert(data.active_alert);
-            if (data.current_depth_md >= 2320.0) {
-              setIsPlaying(false);
-            }
+            if (data.current_depth_md >= 2320.0) setIsPlaying(false);
+            synced = true;
           }
         } catch (err) {}
+
+        if (!synced) {
+          setCurrentMd((prev) => {
+            const next = advanceSimulationStep(prev);
+            if (next >= 2320.0) setIsPlaying(false);
+            return next;
+          });
+        }
       }, 500);
     }
     return () => clearInterval(interval);
@@ -78,44 +126,70 @@ export default function DrillingSimulator() {
 
   const handlePlayPause = async () => {
     if (isPlaying) {
-      await fetch("http://localhost:5050/api/simulator/pause", { method: "POST" });
+      try { await fetch("http://localhost:5050/api/simulator/pause", { method: "POST" }); } catch (e) {}
       setIsPlaying(false);
     } else {
-      await fetch("http://localhost:5050/api/simulator/play", { method: "POST" });
+      try { await fetch("http://localhost:5050/api/simulator/play", { method: "POST" }); } catch (e) {}
       setIsPlaying(true);
     }
   };
 
   const handleReset = async () => {
-    const res = await fetch("http://localhost:5050/api/simulator/reset", { method: "POST" });
-    if (res.ok) {
-      const data = await res.json();
-      setCurrentMd(data.current_depth_md);
-      if (data.telemetry) setTelemetry(data.telemetry);
-      setActiveAlert(data.active_alert);
-      setIsPlaying(false);
-      setActionFeedback(null);
-    }
+    try {
+      const res = await fetch("http://localhost:5050/api/simulator/reset", { method: "POST" });
+      if (res.ok) {
+        const data = await res.json();
+        setCurrentMd(data.current_depth_md);
+        if (data.telemetry) setTelemetry(data.telemetry);
+        setActiveAlert(data.active_alert);
+        setIsPlaying(false);
+        setActionFeedback(null);
+        return;
+      }
+    } catch (e) {}
+
+    // Fallback reset
+    setCurrentMd(2268.0);
+    setTelemetry({
+      bit_depth_md: 2268.0,
+      flow_in: 2400,
+      flow_out: 2368,
+      ecd: 1.33,
+      rop: 14.5,
+      torque: 18.4,
+      spp: 2410,
+      pit_gain_loss: 0.0
+    });
+    setActiveAlert(triggerLookAheadAlert(2268.0));
+    setIsPlaying(false);
+    setActionFeedback(null);
   };
 
   const handleStep = async () => {
-    const res = await fetch("http://localhost:5050/api/simulator/step", { method: "POST" });
-    if (res.ok) {
-      const data = await res.json();
-      setCurrentMd(data.current_depth_md);
-      if (data.telemetry) setTelemetry(data.telemetry);
-      if (data.active_alert) setActiveAlert(data.active_alert);
-    }
+    try {
+      const res = await fetch("http://localhost:5050/api/simulator/step", { method: "POST" });
+      if (res.ok) {
+        const data = await res.json();
+        setCurrentMd(data.current_depth_md);
+        if (data.telemetry) setTelemetry(data.telemetry);
+        if (data.active_alert) setActiveAlert(data.active_alert);
+        return;
+      }
+    } catch (e) {}
+
+    setCurrentMd((prev) => advanceSimulationStep(prev));
   };
 
   const handleRecordFeedback = (actionText) => {
     setActionFeedback(actionText);
     if (activeAlert) {
-      fetch(`http://localhost:5050/api/simulator/alerts/${activeAlert.alert_id}/feedback`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ useful: true, action_taken: actionText })
-      });
+      try {
+        fetch(`http://localhost:5050/api/simulator/alerts/${activeAlert.alert_id}/feedback`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ useful: true, action_taken: actionText })
+        });
+      } catch (e) {}
     }
   };
 
