@@ -29,4 +29,7 @@ Thumbs.db
 # Internal scripts & private notes
 docs/*SCRIPT*.md
 docs/*script*.md
+*.pdf
+*Demo_Script*
+scripts/generate_*.py
 
