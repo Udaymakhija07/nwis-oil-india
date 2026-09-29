@@ -15,8 +15,10 @@ import {
 } from "lucide-react";
 import { fetchWellDetails, fetchNearbyOffsets, fetchWells } from "../api/client";
 import { useWellStore } from "../store/useWellStore";
+import { useTranslation } from "../i18n/translations";
 
 export default function OffsetBrief() {
+  const { t } = useTranslation();
   const { selectedWellId, setSelectedWellId } = useWellStore();
   const [targetWellId, setTargetWellId] = useState(selectedWellId || "DIK-14");
   const [wellList, setWellList] = useState([]);
@@ -142,7 +144,7 @@ export default function OffsetBrief() {
             className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold rounded-lg hover:from-amber-400 hover:to-amber-500 shadow-md text-xs transition"
           >
             <Printer className="w-4 h-4" />
-            Print / Export PDF Brief
+            <span>{t("exportPdf")}</span>
           </button>
         </div>
       </div>

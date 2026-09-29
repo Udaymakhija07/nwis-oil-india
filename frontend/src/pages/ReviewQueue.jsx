@@ -16,8 +16,10 @@ import {
   Check,
   Award
 } from "lucide-react";
+import { useTranslation } from "../i18n/translations";
 
 export default function ReviewQueue() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("queue"); // "queue" | "playground" | "benchmark"
   const [selectedDocId, setSelectedDocId] = useState("DIK-09");
   const [approvedDocs, setApprovedDocs] = useState({});
@@ -608,7 +610,7 @@ Drillstring freed after 21 hours. Maintained high shear rate and restricted stat
 
             {/* Presets */}
             <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Quick Presets:</span>
+              <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider">{t("quickPresets")}</span>
               <button
                 onClick={() => {
                   setLiveExtractText(samplePresets.tipam_loss);
@@ -656,7 +658,7 @@ Drillstring freed after 21 hours. Maintained high shear rate and restricted stat
                 className="px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-slate-950 text-xs font-bold transition-all shadow-xs flex items-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
-                <span>{isExtracting ? "Extracting Geohazard Entities..." : "Extract Geohazard Entities"}</span>
+                <span>{isExtracting ? t("extracting") : t("extractEntities")}</span>
               </button>
             </div>
           </div>

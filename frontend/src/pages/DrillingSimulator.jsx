@@ -17,9 +17,11 @@ import {
   Sparkles
 } from "lucide-react";
 import { useWellStore } from "../store/useWellStore";
+import { useTranslation } from "../i18n/translations";
 
 export default function DrillingSimulator() {
   const { setActiveTab } = useWellStore();
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(5.0);
   const [currentMd, setCurrentMd] = useState(2268.0);
@@ -145,7 +147,7 @@ export default function DrillingSimulator() {
                 : "bg-emerald-600 hover:bg-emerald-700 text-white")}
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current" />}
-            <span>{isPlaying ? "Pause Stream" : "Start Real-Time Stream"}</span>
+            <span>{isPlaying ? t("pauseStream") : t("startStream")}</span>
           </button>
 
           <button
@@ -154,7 +156,7 @@ export default function DrillingSimulator() {
             className="px-3.5 py-2.5 rounded-xl bg-white hover:bg-slate-100 disabled:opacity-50 text-slate-700 text-xs font-semibold border border-slate-200 shadow-xs"
             title="Step +1 metre"
           >
-            Step +1m
+            {t("step1m")}
           </button>
 
           <button
@@ -248,7 +250,7 @@ export default function DrillingSimulator() {
                 <div className="font-bold text-emerald-700 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-emerald-600" />
-                    <span>AI Recommended Remedial Actions (Review Mitigations):</span>
+                    <span>{t("reviewMitigations")}</span>
                   </div>
                   <span className="text-[11px] font-mono bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-200">
                     Confidence: 94%
@@ -266,7 +268,7 @@ export default function DrillingSimulator() {
                 className="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Review & Apply Mitigation</span>
+                <span>{t("applyMitigation")}</span>
               </button>
 
               <button
@@ -274,14 +276,14 @@ export default function DrillingSimulator() {
                 className="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-xs font-semibold transition-all shadow-xs flex items-center justify-center gap-2"
               >
                 <Layers className="w-4 h-4 text-amber-600" />
-                <span>Inspect Offset Curtain</span>
+                <span>{t("inspectCurtain")}</span>
               </button>
 
               <button
                 onClick={() => handleRecordFeedback("Marked as Useful")}
                 className="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-medium text-center"
               >
-                Mark Useful
+                {t("markUseful")}
               </button>
             </div>
           </div>

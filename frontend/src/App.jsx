@@ -16,9 +16,13 @@ import {
   ChevronRight,
   Shield,
   Clock,
-  Radio
+  Radio,
+  Sun,
+  Moon,
+  Languages
 } from "lucide-react";
 import { useWellStore } from "./store/useWellStore";
+import { useTranslation } from "./i18n/translations";
 import OilIndiaLogo from "./components/OilIndiaLogo";
 import Dashboard from "./pages/Dashboard";
 import WellMap from "./pages/WellMap";
@@ -32,7 +36,8 @@ import Catalogue from "./pages/Catalogue";
 import OffsetBrief from "./pages/OffsetBrief";
 
 export default function App() {
-  const { activeTab, setActiveTab } = useWellStore();
+  const { activeTab, setActiveTab, theme, language, toggleTheme, toggleLanguage } = useWellStore();
+  const { t } = useTranslation();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(250);
   const [isDragging, setIsDragging] = useState(false);
@@ -49,16 +54,16 @@ export default function App() {
   }, []);
 
   const navItems = [
-    { id: "dashboard", label: "Command Center", icon: Activity, badge: null },
-    { id: "map", label: "Well Proximity Map", icon: MapPin, badge: "GIS Pro" },
-    { id: "curtain", label: "Offset Curtain", icon: Layers, badge: "Hero View" },
-    { id: "simulator", label: "Drilling Simulator", icon: PlayCircle, badge: "Live Stream" },
-    { id: "radar", label: "Look-Ahead Radar", icon: Compass, badge: "ML Risk" },
-    { id: "copilot", label: "RAG Copilot (Ask NWIS)", icon: Sparkles, badge: "AI Assistant" },
-    { id: "brief", label: "Pre-Spud Offset Brief", icon: FileCheck2, badge: "Official PSHB" },
-    { id: "events", label: "Historical Events", icon: ShieldAlert, badge: "47 Records" },
-    { id: "review", label: "Document AI Review", icon: FileText, badge: "AI Hub" },
-    { id: "catalogue", label: "Well Catalogue (60)", icon: Database, badge: null }
+    { id: "dashboard", label: t("nav_dashboard"), icon: Activity, badge: null },
+    { id: "map", label: t("nav_map"), icon: MapPin, badge: t("badge_gis_pro") },
+    { id: "curtain", label: t("nav_curtain"), icon: Layers, badge: t("badge_hero_view") },
+    { id: "simulator", label: t("nav_simulator"), icon: PlayCircle, badge: t("badge_live_stream") },
+    { id: "radar", label: t("nav_radar"), icon: Compass, badge: t("badge_ml_risk") },
+    { id: "copilot", label: t("nav_copilot"), icon: Sparkles, badge: t("badge_ai_assistant") },
+    { id: "brief", label: t("nav_brief"), icon: FileCheck2, badge: t("badge_official_pshb") },
+    { id: "events", label: t("nav_events"), icon: ShieldAlert, badge: t("badge_47_records") },
+    { id: "review", label: t("nav_review"), icon: FileText, badge: t("badge_ai_hub") },
+    { id: "catalogue", label: t("nav_catalogue"), icon: Database, badge: null }
   ];
 
   // Drag-to-resize functionality
@@ -128,35 +133,63 @@ export default function App() {
           <div className="hidden md:flex flex-col min-w-0">
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-[13px] text-[#0f265c] tracking-tight truncate">
-                NWIS <span className="font-normal text-slate-300">|</span> Nearby Wells Intelligence System
+                {t("brandTitle")}
               </span>
               <span className="text-[10px] font-bold text-amber-800 bg-amber-100/80 px-2 py-0.5 rounded-md border border-amber-200/80 shrink-0">
-                v2.5 eRTMAC
+                {t("versionTag")}
               </span>
             </div>
             <span className="text-[10px] text-slate-500 font-medium truncate">
-              पेट्रोलियम और प्राकृतिक गैस मंत्रालय • Ministry of Petroleum & Natural Gas, Govt. of India
+              {t("brandSubtitle")}
             </span>
           </div>
         </div>
 
-        {/* Right: Telemetry Status, Official Classification & Live Clock */}
-        <div className="flex items-center gap-2.5 shrink-0">
-          <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80">
+        {/* Right: Telemetry Status, Official Classification, Language/Theme Toggles & Live Clock */}
+        <div className="flex items-center gap-2 shrink-0">
+          <div className="hidden sm:flex items-center gap-1.5 text-[11px] font-medium text-slate-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="hidden xl:inline text-slate-500 text-[10px]">eRTMAC:</span>
-            <span className="font-mono text-emerald-800 font-bold text-[10px]">CONNECTED</span>
+            <span className="font-mono text-emerald-800 font-bold text-[10px]">{t("ertmacConnected")}</span>
           </div>
 
           <div className="hidden lg:flex items-center gap-1.5 text-[10px] font-bold font-mono text-amber-900 bg-amber-50 px-2 py-1 rounded-lg border border-amber-200/80">
             <Shield className="w-3 h-3 text-amber-600" />
-            <span>OFFICIAL USE ONLY</span>
+            <span>{t("officialUse")}</span>
           </div>
 
-          <div className="flex items-center gap-1.5 text-slate-600 font-mono text-[11px] bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200/80">
+          <div className="hidden md:flex items-center gap-1.5 text-slate-600 font-mono text-[11px] bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200/80">
             <Clock className="w-3 h-3 text-slate-400" />
             <span>{currentTime || "LIVE IST"}</span>
           </div>
+
+          <div className="h-5 w-px bg-slate-200 hidden sm:block mx-0.5" />
+
+          {/* Bilingual Language Switcher */}
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-200 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold transition cursor-pointer shadow-xs"
+            title={t("languageToggle")}
+          >
+            <Languages className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+            <span className="font-bold">{language === "hi" ? "हिंदी" : "EN"}</span>
+            <span className="text-[10px] text-slate-400 font-normal">|</span>
+            <span className="text-[10px] text-slate-500 font-normal">{language === "hi" ? "EN" : "हिंदी"}</span>
+          </button>
+
+          {/* Dark / Light Theme Switcher */}
+          <button
+            onClick={toggleTheme}
+            className="p-1.5 rounded-lg border border-slate-200 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-amber-600 transition cursor-pointer shadow-xs"
+            title={t("themeToggle")}
+            aria-label="Toggle Theme"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-4 h-4 text-amber-500 fill-amber-500/20" />
+            ) : (
+              <Moon className="w-4 h-4 text-slate-600 fill-slate-400/20" />
+            )}
+          </button>
         </div>
       </header>
 
@@ -183,9 +216,9 @@ export default function App() {
           {/* Sidebar Section Sub-header */}
           {!isCollapsed && (
             <div className="px-4 py-2.5 border-b border-slate-100 bg-slate-50/70 flex items-center justify-between text-[11px]">
-              <span className="font-bold text-slate-600 uppercase tracking-wider text-[10px]">Portal Modules</span>
+              <span className="font-bold text-slate-600 uppercase tracking-wider text-[10px]">{t("portalModules")}</span>
               <span className="text-[10px] text-amber-800 font-bold font-mono bg-amber-100/80 px-1.5 py-0.2 rounded border border-amber-200">
-                10 Systems
+                {t("systemsCount")}
               </span>
             </div>
           )}
@@ -241,15 +274,15 @@ export default function App() {
                 <div className="flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span className="text-xs font-semibold text-slate-800">eRTMAC Stream</span>
+                    <span className="text-xs font-semibold text-slate-800">{t("ertmacStream")}</span>
                   </span>
                   <span className="text-emerald-800 font-bold font-mono text-[10px] bg-emerald-100 px-2 py-0.5 rounded-md border border-emerald-200">
-                    LIVE CONNECTED
+                    {t("liveConnected")}
                   </span>
                 </div>
                 <div className="flex items-center justify-between text-[10px] text-slate-500 font-mono">
                   <span>SIH 2026 PS 26121</span>
-                  <span>OIL Duliajan Asset</span>
+                  <span>{t("assetLocation")}</span>
                 </div>
               </div>
             ) : (
@@ -268,10 +301,10 @@ export default function App() {
               <button
                 onClick={() => setIsCollapsed(false)}
                 className="p-2.5 rounded-xl bg-white border border-slate-200 shadow-md text-slate-600 hover:text-slate-900 hover:bg-slate-50 flex items-center gap-2 text-xs font-semibold transition"
-                title="Expand Sidebar"
+                title={t("expandSidebar")}
               >
                 <PanelLeft className="w-4 h-4 text-amber-600" />
-                <span>Expand Menu</span>
+                <span>{t("expandMenu")}</span>
               </button>
             </div>
           )}
