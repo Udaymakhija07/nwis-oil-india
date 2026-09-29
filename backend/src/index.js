@@ -74,6 +74,7 @@ app.use("/api/wells", authenticate, wellsRouter);
 app.use("/api/events", authenticate, eventsRouter);
 app.use("/api/formations", authenticate, formationsRouter);
 app.use("/api/documents", authenticate, documentsRouter);
+app.use("/api/ai", authenticate, documentsRouter);
 app.use("/api/correlation", authenticate, correlationRouter);
 app.use("/api/copilot", authenticate, copilotRouter);
 app.use("/api/ml", authenticate, mlRouter);
